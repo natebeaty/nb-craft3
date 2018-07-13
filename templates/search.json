@@ -1,0 +1,16 @@
+{% set query = craft.request.getParam('q') %}
+{% set results = craft.entries({
+  search: {
+      query: query,
+      subRight: true
+  }
+}) %}
+{
+  "entries" : [
+    {% for entry in results.all() %}
+      {% if not (entry.slug matches '/^homepage|about|featured|journal|comics$/') %}
+        { "title": "{{ entry.title }}", "url": "{{ entry.url }}" }{% if not loop.last %},{% endif %}
+      {% endif %}
+    {% endfor %}
+  ]
+}

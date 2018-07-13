@@ -1,0 +1,18 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% set title = entry.title %}
+{% if entry.seoDescription %}{% set description = entry.seoDescription %}{% endif %}
+
+{% block content %}
+	<section class="page-content" data-page="{{ craft.app.request.absoluteUrl|replace((siteUrl), '/') }}" data-page-title="{{ entry.title }}">
+	<div class="body user-content">
+		{{ entry.body }}
+	</div>
+	{% for block in entry.socialBlocks.all() %}
+		<ul class="social">
+		{% if block.type == "social" %}
+			<li><a href="{{ block.socialURL }}">{{ block.header }}</a></li>
+		{% endif %}
+		</ul>
+	{% endfor %}
+	</section>
+{% endblock %}

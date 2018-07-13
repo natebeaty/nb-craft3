@@ -1,0 +1,27 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% set title = "Journal" %}
+{% set description = "Blather makes brains into blubber." %}
+
+{% paginate craft.entries.section('journal').limit(25) as pageInfo, pageEntries %}
+
+{% block content %}
+	{% cache unless currentUser %}
+	<section class="journal-list page-content" data-page="{{ craft.app.request.absoluteUrl|replace((siteUrl), '/') }}" data-page-title="{{ title }}">
+
+		{% for entry in pageEntries %}
+			<article class="journal">
+				<h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
+				<p class="date">{{ entry.postDate.format('F d, Y') }}</p>
+				<p>{{ entry.body | chop(limit=250, unit='c', append='...') }}</p>
+			</article>
+
+		{% endfor %}
+
+		<div class="pagination">
+			{% if pageInfo.prevUrl %}<a rel="nofollow" class="previous" href="{{ pageInfo.prevUrl }}"><span>Previous</span></a>{% endif %}
+			<a class="archives" href="/journal/archives">Archives</a>
+			{% if pageInfo.nextUrl %}<a rel="nofollow" class="next" href="{{ pageInfo.nextUrl }}"><span>Next</span></a>{% endif %}
+		</div>
+	</section>
+	{% endcache %}
+{% endblock %}
