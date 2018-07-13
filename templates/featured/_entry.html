@@ -7,47 +7,47 @@
 {% set nextEntry = entry.getNext(params) %}
 
 {% block content %}
-	{% cache unless currentUser %}
-	<article class="featured is-single" data-section="featured" data-page="{{ entry.url|replace((siteUrl), '/') }}" data-page-title="{{ entry.title }}">
-		<h1>{{ entry.title }}</h1>
-		<div class="description user-content">
-			{{ entry.body }}
-		</div>
-		{% for image in entry.featureImages.all() %}
-			<div class="ratiowrap" style="padding-bottom:{{ image.height / image.width * 100 }}%;max-width:{{ image.width }}px;max-height:{{ image.height }}px">
-				{# <img class="lazy wrapped" data-original="{{ image.getUrl() }}" alt="{{ entry.title }}" width="{{ image.width }}" height="{{ image.height }}"> #}
-				<img class="lazy wrapped"
-					width="{{ image.width }}" height="{{ image.height }}"
-					data-original="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }}"
-					data-original-set="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }} 750w, {{ craft.app.config.general.cdnUrl }}{{ image.getUrl() }} {{ image.width }}w,"
-					sizes="(max-width: 768px) 100vw, (max-width: 1500px) 750px, 960px"
-					alt="{{ image.title ? image.title : entry.title }}"
-				/>
-			</div>
-		{% endfor %}
+  {% cache unless currentUser %}
+  <article class="featured is-single" data-section="featured" data-page="{{ entry.url|replace((siteUrl), '/') }}" data-page-title="{{ entry.title }}">
+    <h1>{{ entry.title }}</h1>
+    <div class="description user-content">
+      {{ entry.body }}
+    </div>
+    {% for image in entry.featureImages.all() %}
+      <div class="ratiowrap" style="padding-bottom:{{ image.height / image.width * 100 }}%;max-width:{{ image.width }}px;max-height:{{ image.height }}px">
+        {# <img class="lazy wrapped" data-original="{{ image.getUrl() }}" alt="{{ entry.title }}" width="{{ image.width }}" height="{{ image.height }}"> #}
+        <img class="lazy wrapped"
+          width="{{ image.width }}" height="{{ image.height }}"
+          data-original="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }}"
+          data-original-set="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }} 750w, {{ craft.app.config.general.cdnUrl }}{{ image.getUrl() }} {{ image.width }}w,"
+          sizes="(max-width: 768px) 100vw, (max-width: 1500px) 750px, 960px"
+          alt="{{ image.title ? image.title : entry.title }}"
+        />
+      </div>
+    {% endfor %}
 
-		{% for block in entry.featuredBlocks.all() %}
-			{% if block.type == "featureBlock" %}
-				{% for image in block.images.all() %}
-					<div class="ratiowrap" style="padding-bottom:{{ image.height / image.width * 100 }}%;max-width:{{ image.width }}px;max-height:{{ image.height }}px">
-						{# <img class="lazy wrapped" data-original="{{ image.getUrl() }}" alt="{{ entry.title }}" width="{{ image.width }}" height="{{ image.height }}"> #}
-						<img class="lazy wrapped"
-							width="{{ image.width }}" height="{{ image.height }}"
-							data-original="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }}"
-							data-original-set="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }} 750w, {{ craft.app.config.general.cdnUrl }}{{ image.getUrl() }} {{ image.width }}w,"
-							sizes="(max-width: 768px) 100vw, (max-width: 1500px) 750px, 960px"
-							alt="{{ image.title ? image.title : entry.title }}"
-						/>
-					</div>
-				{% endfor %}
-				{% if block.description %}
-					<div class="description user-content">{{ block.description }}</div>
-				{% endif %}
-			{% endif %}
-		{% endfor %}
+    {% for block in entry.featuredBlocks.all() %}
+      {% if block.type == "featureBlock" %}
+        {% for image in block.images.all() %}
+          <div class="ratiowrap" style="padding-bottom:{{ image.height / image.width * 100 }}%;max-width:{{ image.width }}px;max-height:{{ image.height }}px">
+            {# <img class="lazy wrapped" data-original="{{ image.getUrl() }}" alt="{{ entry.title }}" width="{{ image.width }}" height="{{ image.height }}"> #}
+            <img class="lazy wrapped"
+              width="{{ image.width }}" height="{{ image.height }}"
+              data-original="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }}"
+              data-original-set="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }} 750w, {{ craft.app.config.general.cdnUrl }}{{ image.getUrl() }} {{ image.width }}w,"
+              sizes="(max-width: 768px) 100vw, (max-width: 1500px) 750px, 960px"
+              alt="{{ image.title ? image.title : entry.title }}"
+            />
+          </div>
+        {% endfor %}
+        {% if block.description %}
+          <div class="description user-content">{{ block.description }}</div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
 
-	</article>
+  </article>
 
-	{% include "partials/_pagination" %}
-	{% endcache %}
+  {% include "partials/_pagination" %}
+  {% endcache %}
 {% endblock %}

@@ -2,49 +2,49 @@
 {% set title = "Comics" %}
 {% set description = "Diddling with sequential doodles." %}
 {% set entries = craft.entries({
-		section: 'comics',
-		with: [
-			['featuredImage', {
-					withTransforms: ['thumb','thumb1x','thumbLarge']
-			}]
-		]
+    section: 'comics',
+    with: [
+      ['featuredImage', {
+          withTransforms: ['thumb','thumb1x','thumbLarge']
+      }]
+    ]
 }) %}
 {% set relatedCats = craft.categories.relatedTo(entries) %}
 
 {% block content %}
-	{% cache unless currentUser %}
-	<section class="comics-list image-list page-content" data-page="{{ craft.app.request.absoluteUrl|replace((siteUrl), '/') }}" data-page-title="{{ title }}">
-	{# Loop the categories #}
-	{% for category in relatedCats.all() %}
+  {% cache unless currentUser %}
+  <section class="comics-list image-list page-content" data-page="{{ craft.app.request.absoluteUrl|replace((siteUrl), '/') }}" data-page-title="{{ title }}">
+  {# Loop the categories #}
+  {% for category in relatedCats.all() %}
 
-		<div class="comic-group category-{{ category.slug }}">
-		  <h2>{{ category.title }}</h2>
-			<div class="masonryme">
-		  {% set relatedEntries = craft.entries.relatedTo(category) %}
-		  {% for entry in relatedEntries.all() %}
+    <div class="comic-group category-{{ category.slug }}">
+      <h2>{{ category.title }}</h2>
+      <div class="masonryme">
+      {% set relatedEntries = craft.entries.relatedTo(category) %}
+      {% for entry in relatedEntries.all() %}
 
-				{% set featuredImage = entry.featuredImage[0] ?? null %}
-				{% if featuredImage %}
-					<article class="bigclicky {{ (entry.slug=='wolfman') ? "wide" : "" }}">
-						<div class="pad">
-							<div class="ratiowrap" style="padding-bottom: {{ featuredImage.height / featuredImage.width * 100 }}%">
-								<img
-									data-original="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }}"
-									data-original-set="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }} 250w, {{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb') }} 500w, {{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumbLarge') }} 1000w"
-									sizes="(max-width: 768px) 100vw, {{ (entry.slug=='wolfman') ? "calc((100vw - 90px) / 2)" : "calc((100vw - 90px) / 4)" }}"
-									alt="{{ featuredImage.title ? featuredImage.title : entry.title }}"
-								/>
-							</div>
-							<h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
-						</div>
-					</article>
-				{% endif %}
+        {% set featuredImage = entry.featuredImage[0] ?? null %}
+        {% if featuredImage %}
+          <article class="bigclicky {{ (entry.slug=='wolfman') ? "wide" : "" }}">
+            <div class="pad">
+              <div class="ratiowrap" style="padding-bottom: {{ featuredImage.height / featuredImage.width * 100 }}%">
+                <img
+                  data-original="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }}"
+                  data-original-set="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }} 250w, {{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb') }} 500w, {{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumbLarge') }} 1000w"
+                  sizes="(max-width: 768px) 100vw, {{ (entry.slug=='wolfman') ? "calc((100vw - 90px) / 2)" : "calc((100vw - 90px) / 4)" }}"
+                  alt="{{ featuredImage.title ? featuredImage.title : entry.title }}"
+                />
+              </div>
+              <h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
+            </div>
+          </article>
+        {% endif %}
 
-		  {% endfor %}
-			</div>
-		</div>
+      {% endfor %}
+      </div>
+    </div>
 
-	{% endfor %}
-	</section>
-	{% endcache %}
+  {% endfor %}
+  </section>
+  {% endcache %}
 {% endblock %}

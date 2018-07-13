@@ -2,23 +2,28 @@
 {% set title = "Journal Archives" %}
 
 {% if entry is not defined %}
-    {% set entry = craft.entries.section('journalArchives').first() %}
+    {% set entry = craft.entries.section('journalArchives').one() %}
 {% endif %}
 
 {% set allEntries = craft.entries.section('journal').limit(null) %}
 
 {% block content %}
   {% cache unless currentUser %}
-	<section class="journal-list is-single archives page-content"  data-section="journal" data-page="{{ entry.url|replace((siteUrl), '/') }}" data-page-title="{{ title }}">
+  <section class="journal-list is-single archives page-content"  data-section="journal" data-page="{{ entry.url|replace((siteUrl), '/') }}" data-page-title="{{ title }}">
   <h1>Journal Archives</h1>
-	{% for date, entries in allEntries | group("postDate|date('F Y')") %}
+  {% if entry.body %}
+    <div class="body user-content">
+      {{ entry.body }}
+    </div>
+  {% endif %}
+  {% for date, entries in allEntries.all() | group("postDate|date('F Y')") %}
     <h2 class="date">{{ date }}</h2>
     <ul>
       {% for entry in entries %}
         <li>{{ entry.getLink() }} <i class="len" style="width: {{ 100 * (entry.body|length / 10000) }}px;"></i></li>
       {% endfor %}
     </ul>
-	{% endfor %}
-	</section>
+  {% endfor %}
+  </section>
   {% endcache %}
 {% endblock %}

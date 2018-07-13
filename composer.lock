@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a464af673f495cb6cbca088cd93b411",
+    "content-hash": "55db1d26be88d97a0781828221d922df",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -494,11 +494,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/7d72a873e12ea7c92a8a6d00e025e303089d504e",
-                "reference": "7d72a873e12ea7c92a8a6d00e025e303089d504e",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/ed7937b9f7eb973e1b097848ae08f7a25c7fa87d",
+                "reference": "ed7937b9f7eb973e1b097848ae08f7a25c7fa87d",
                 "shasum": ""
             },
             "require": {
@@ -540,7 +540,7 @@
                 "docs": "https://github.com/craftcms/redactor",
                 "rss": "https://github.com/craftcms/redactor/commits/master.atom"
             },
-            "time": "2018-05-15T21:58:54+00:00"
+            "time": "2018-07-13T10:27:44+00:00"
         },
         {
             "name": "craftcms/server-check",
