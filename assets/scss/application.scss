@@ -82,11 +82,6 @@ nav.main {
     height: 50vh;
     transition: all .3s, border-color 0.01s, background 0.01s, font 0.01s;
     border: 0 solid rgba(0,0,0,0);
-    @include min-screen($breakpoint-medium) {
-      &:hover span {
-        text-decoration: underline;
-      }
-    }
     span {
       display: block;
       position: absolute;
@@ -135,6 +130,14 @@ nav.main {
       bottom: 0;
       right: 0;
       background: $featured;
+    }
+  }
+}
+// notouch hovers
+.no-touchevents {
+  nav.main {
+    a:hover span {
+      text-decoration: underline;
     }
   }
 }
@@ -406,15 +409,9 @@ body.in-section {
   .category-shorts article,
   .category-oldies article,
   .category-kids article {
-    opacity: .9;
-    // width: 50%;
     width: calc( (100% - 10px) / 2 );
     @include min-screen($breakpoint-medium) {
-      // width: 20%;
       width: calc( (100% - 50px) / 5 );
-    }
-    &:hover {
-      opacity: 1;
     }
   }
   .images-loaded article img {
@@ -447,40 +444,52 @@ body.in-section {
     }
     @include min-screen($breakpoint-medium) {
       &.wide {
-        // width: 50%;
         width: calc( (100% - 10px) / 2 );
         img {
           width: 100%;
         }
       }
-      // width: 25%;
       width: calc( (100% - 30px) / 4 );
       cursor: pointer;
-      // margin: 0 0 10px;
-      .pad {
-        // padding: 0 10px 0 0;
-      }
-      h1 {
-        visibility: hidden;
-        max-height: 0;
-      }
+    }
+  }
+}
+// notouch hovers
+.no-touchevents {
+  .image-list {
+    .category-shorts article,
+    .category-oldies article,
+    .category-kids article {
+      opacity: .9;
       &:hover {
+        opacity: 1;
+      }
+    }
+    article {
+      @include min-screen($breakpoint-medium) {
         h1 {
-          z-index: 3;
-          overflow: hidden;
-          transition: max-height .15s, visibility 0s .15s;
-          margin-right: 20px;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          visibility: visible;
-          max-height: 50px;
-          transition: max-height .15s, visibility 0s;
+          visibility: hidden;
+          max-height: 0;
+        }
+        &:hover {
+          h1 {
+            z-index: 3;
+            overflow: hidden;
+            transition: max-height .15s, visibility 0s .15s;
+            margin-right: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            visibility: visible;
+            max-height: 100px;
+            transition: max-height .15s, visibility 0s;
+          }
         }
       }
     }
   }
 }
+
 
 .pagination {
   max-width: 750px;
