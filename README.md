@@ -1,3 +1,3 @@
 # nb-craft3
 
-Craft3 version of natebeaty.com
+Craft 3 version of [natebeaty.com](natebeaty.com)
