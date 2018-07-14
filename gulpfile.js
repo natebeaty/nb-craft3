@@ -22,7 +22,7 @@ var jshint       = require('gulp-jshint');
 
 // Various config
 var conf = {
-  siteUrl: 'clx.localhost'
+  siteUrl: 'nb-craft3.localhost'
 };
 
 // CLI options
