@@ -1,37 +1,4 @@
-{# Set base SEO vars #}
-{% set seoTitle = globalSeo.seoTitle %}
-{% set seoDescription = globalSeo.seoDescription %}
-
-{% do view.registerCssFile(rev('css/application.css')) %}
-{% do view.registerJsFile(rev('js/application.js')) %}
-
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
-<head>
-  <meta charset="utf-8" />
-  <title>{% if title is defined %}{{ title }} – {{ siteName }}{% else %}{{ seoTitle }}{% endif %}</title>
-  <meta name="description" content="{% if description is defined %}{{ description }}{% else %}{{ seoDescription }}{% endif %}"/>
-  <link rel="home" href="{{ siteUrl }}" />
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="alternate" type="application/rss+xml" title="Nate Beaty Journal" href="http://feeds.feedburner.com/natebeaty/journal" />
-  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
-  <link rel="shortcut icon" href="{{ rev('img/favicon.png') }}">
-  <script type="text/javascript" src="{{ rev('js/modernizr.custom.js') }}"></script>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-248215-5', 'auto');
-    ga('send', 'pageview');
-  </script>
-</head>
-
-<body>
-  <div class="hidden"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="icon-cart" viewBox="0 0 29.06 21.76"><defs><style>.cls-cart{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}.cls-2{fill:#fff;}</style></defs><title>icon-cart</title><polyline class="cls-cart" points="0 1 9.97 1 10.34 15.41 25.86 15.41 28.08 3.96"/><circle class="cls-2" cx="12.63" cy="19.84" r="1.92"/><circle class="cls-2" cx="23.58" cy="19.84" r="1.92"/></symbol><symbol id="icon-search" viewBox="0 0 21.98 25.75"><defs><style>.cls-search{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><title>icon-search</title><g id="Layer_1" data-name="Layer 1"><circle class="cls-search" cx="10.9" cy="10.54" r="8.96"/><line class="cls-search" x1="6.09" y1="18.09" x2="1.94" y2="24.34"/></g></symbol><symbol id="icon-close" viewBox="0 0 26.75 24.17"><defs><style>.cls-close{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><title>icon-close</title><g id="Layer_1" data-name="Layer 1"><line class="cls-close" x1="1.3" y1="1.01" x2="25.07" y2="22.68"/><line class="cls-close" x1="1.3" y1="22.68" x2="25.07" y2="1.01"/></g></symbol></svg></div>
-  <a id="natehead" href="/"><svg xmlns="http://www.w3.org/2000/svg" width="240" height="340" viewBox="0 0 240 340">
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="340" viewBox="0 0 240 340">
   <g fill="none" fill-rule="evenodd">
     <path fill="#C3C09D" fill-rule="nonzero" stroke="#979797" d="M117.894531,1 C75.6419271,8.00520833 48.5338542,23.6276042 36.5703125,47.8671875 C24.6067708,72.1067708 17.75,102.757812 16,139.820312 C17.2682292,183.914062 19.7838542,216.970052 23.546875,238.988281 C29.1914062,272.015625 39.4335937,333.027344 111.855469,333.027344 C184.277344,333.027344 196.445313,269.035156 207.972656,238.988281 C215.657552,218.957031 220.851563,185.901042 223.554688,139.820312 C223.713542,108.539062 218.519531,80.0703125 207.972656,54.4140625 C197.425781,28.7578125 167.39974,10.953125 117.894531,1 Z"/>
     <path fill="#CE5FAE" fill-rule="nonzero" d="M105.484375,146.40625 C96.984375,146.40625 97.125,181.332031 89.5585938,187.796875 C81.9921875,194.261719 74.9550781,187.783203 74.9550781,200.929688 C74.9550781,214.076172 88.65625,203.714844 100.46875,203.714844 C112.28125,203.714844 131.386719,213.484375 131.386719,200.929688 C131.386719,188.375 123.589844,195.932943 118.285156,184.863281 C112.980469,173.79362 113.984375,146.40625 105.484375,146.40625 Z"/>
@@ -49,7 +16,7 @@
     <path fill="#C3C09D" fill-rule="nonzero" d="M218.9375 137.995117C223.196615 132.636393 227.917643 129.957031 233.100586 129.957031 240.875 129.957031 240.901367 149.704102 238.264648 156.735352 235.62793 163.766602 229.388879 181.057617 229.388879 188.174805 229.388879 195.291992 228.743164 202.891602 226.089844 207.681641 223.436523 212.47168 225.207031 215.851562 218.9375 215.851562 212.667969 215.851562 216.52832 197.757812 218.9375 188.174805 221.34668 178.591797 218.9375 172.932617 218.9375 168.616211 218.9375 164.299805 224.225586 161.724609 222.530273 154.804688 221.400065 150.191406 220.202474 144.588216 218.9375 137.995117zM7.91308594 137.4375C3.83398438 137.4375-2.14746094 140.509766 1.20605469 153.748047 4.55957031 166.986328 9.81445312 167.047852 9.81445312 176.246094 9.81445312 185.444336 7.14453125 196.770508 12.1132812 199.607422 17.0820312 202.444336 17.4677734 198.22168 17.4677734 195.121094 17.4677734 192.020508 11.9921875 137.4375 7.91308594 137.4375z"/>
     <path fill="#3D4830" fill-rule="nonzero" d="M105.380859,141.144531 C118.130859,141.144531 126.005859,135.699219 143.996094,132.994141 C161.986328,130.289063 194.550781,135.699219 198.009766,143.935547 C201.46875,152.171875 194.550781,171.210938 184.638672,180.15625 C174.726562,189.101562 139.822266,186.681641 126.005859,180.15625 C112.189453,173.630859 115.597656,152.337891 105.380859,152.337891 C95.1640625,152.337891 90.1015625,180.15625 81.0175781,184.152344 C71.9335937,188.148438 40.0976562,184.152344 30.5898437,180.15625 C21.0820312,176.160156 11.53125,158.757813 15.5195312,143.935547 C19.5078125,129.113281 35.9726562,132.994141 55.8320312,132.994141 C75.6914062,132.994141 92.6308594,141.144531 105.380859,141.144531 Z M24.5800781,143.810547 C19.2910156,159.314453 24.8691406,170.337891 29.8691406,174.765625 C34.8691406,179.193359 71.4863281,186.332031 82.3378906,174.765625 C93.1894531,163.199219 95.3964844,150.962891 89.7285156,143.810547 C84.0605469,136.658203 29.8691406,128.306641 24.5800781,143.810547 Z M117.519531,151.041016 C117.519531,167.234375 119.496094,170.060547 130.169922,177.390625 C140.84375,184.720703 176.945312,183.066406 183.574219,172.673828 C190.203125,162.28125 193.425781,146.828125 183.574219,139.523437 C173.722656,132.21875 117.519531,134.847656 117.519531,151.041016 Z"/>
     <path fill="#FFF" fill-rule="nonzero" d="M45.859375 149.019531C51.7044271 143.384115 57.6367188 140.566406 63.65625 140.566406 69.6757812 140.566406 76.4713542 143.384115 84.0429688 149.019531 78.2083333 154.160156 71.4127604 156.730469 63.65625 156.730469 55.8997396 156.730469 49.9674479 154.160156 45.859375 149.019531zM132.75 147.96875C139.842448 141.967448 146.750651 138.966797 153.474609 138.966797 160.198568 138.966797 166.139323 141.967448 171.296875 147.96875 167.976562 152.511719 162.035807 154.783203 153.474609 154.783203 144.913411 154.783203 138.005208 152.511719 132.75 147.96875z"/>
-    <g fill="#663C16" fill-rule="nonzero" transform="translate(56 140)" id="stache">
+    <g fill="#663C16" fill-rule="nonzero" transform="translate(56 140)">
       <path d="M97.0546875.158203125C89.1777344.158203125 86.6054688 12.9375 97.0546875 12.9375 107.503906 12.9375 104.931641.158203125 97.0546875.158203125zM7.0546875 1.65820312C-.822265625 1.65820312-3.39453125 14.4375 7.0546875 14.4375 17.5039062 14.4375 14.9316406 1.65820312 7.0546875 1.65820312z"/>
     </g>
     <path fill="#FFF" fill-rule="nonzero" d="M93.2421875,190.681641 C88.3183594,198.005859 93.7382812,202.322266 98.1660156,202.322266 C102.59375,202.322266 109.523437,202.322266 109.523437,196.001953 C109.523437,189.681641 98.1660156,183.357422 93.2421875,190.681641 Z"/>
@@ -62,37 +29,3 @@
     <path fill="#FFF" fill-rule="nonzero" d="M63.0033096 145.5C64.4520401 145.5 66.0428604 147.630371 63.7987198 147.630371 61.5545791 147.630371 61.5545791 145.5 63.0033096 145.5zM153.00331 144C154.45204 144 156.04286 146.130371 153.79872 146.130371 151.554579 146.130371 151.554579 144 153.00331 144z"/>
   </g>
 </svg>
-</a>
-
-    <h1 class="title"><span class="nate">Nate</span> <span class="beaty">Beaty</span></h1>
-
-    <main role="main">
-      {% block content %}
-      {% endblock %}
-    </main>
-
-    <nav class="main">
-      <a class="comics" href="/comics"><span>Comics</span></a>
-      <a class="journal" href="/journal"><span>Journal</span></a>
-      <a class="about" href="/about"><span>About</span></a>
-      <a class="featured" href="/featured"><span>Featured</span></a>
-      <svg class="s" role="img"><use xlink:href="#icon-search"></use></svg>
-      <svg class="x" role="img"><use xlink:href="#icon-close"></use></svg>
-      <i class="cart">
-        <svg class="icon icon-cart" role="img"><use xlink:href="#icon-cart"></use></svg>
-        <form class="cart-wrap" action="https://www.paypal.com/cgi-bin/webscr" method="post"><div class="cart-contents"><div class="flip">
-          <ul class="cart-items"></ul>
-          <div class="cart-total"></div>
-          <div id="paypal-container"></div>
-          <input type="hidden" name="cmd" value="_cart">
-          <input type="hidden" name="upload" value="1">
-          <input type="hidden" name="business" value="nate@clixel.com">
-          <input type="hidden" name="charset" value="utf-8">
-        </div></div></form>
-      </i>
-    </nav>
-
-    <form action="/search" class="search"><input type="text" name="s" autocomplete="off" autocorrect="off"><input type="submit"><div class="results"></div></form>
-
-</body>
-</html>
