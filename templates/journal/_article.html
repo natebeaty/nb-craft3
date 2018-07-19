@@ -6,6 +6,6 @@
     {% endif %}
     <p class="date">{{ entry.postDate.format('F d, Y') }}</p>
     <div class="body user-content">
-      {{ entry.body | retcon('lazy') | raw }}
+      {{ entry.body }}
     </div>
   </article>

@@ -269,6 +269,9 @@ body.active-comics nav.main a.comics {
   .bigclicky {
     cursor: auto;
   }
+  img.lazy {
+    opacity: 1;
+  }
 }
 
 main.loaded {
@@ -280,6 +283,9 @@ main.loaded {
 }
 
 // giant SVG head
+#nate-eyes {
+  transition: fill .25s ease-out;
+}
 #natehead {
   position: fixed;
   transition: all .25s ease-out;

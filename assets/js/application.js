@@ -4,12 +4,11 @@
 
 //=include "../bower_components/jquery/dist/jquery.js"
 //=include "../bower_components/jquery.fitvids/jquery.fitvids.js"
-//=include "../bower_components/velocity/velocity.min.js"
 //=include "../bower_components/imagesloaded/imagesloaded.pkgd.min.js"
 //=include "../bower_components/masonry/dist/masonry.pkgd.js"
-//=include "../bower_components/history.js/scripts/bundled/html5/jquery.history.js"
-//=include "../bower_components/vanilla-lazyload/dist/lazyload.min.js"
+//=include "../bower_components/jquery.easing/js/jquery.easing.min.js"
 //=include "../bower_components/jquery-touchswipe/jquery.touchSwipe.js"
+//=include "../bower_components/history.js/scripts/bundled/html5/jquery.history.js"
 
 var Nb = (function($) {
 
@@ -20,13 +19,13 @@ var Nb = (function($) {
       section_in,
       scroll_to_top = false,
       page_cache = {},
-      lazyloader,
       cart,
       searching = false,
       checking_out = false,
       search_timer,
       eggs = ['dizzy', 'jab', 'pow', 'wizard'],
-      egg_at = 0;
+      egg_at = 0,
+      $nate_eyes = [];
 
   function _init() {
     // Localstorage cart
@@ -36,18 +35,9 @@ var Nb = (function($) {
     // Fit them vids!
     $('main').fitVids();
 
-    // Trigger lazyload
-    lazyloader = new LazyLoad({
-      threshold: 1000,
-      callback_load: function(el) {
-        // Add class to wrap to remove loading display
-        $(el).parents('.ratiowrap:first').addClass('loaded');
-        var h = $(el).attr('height');
-        if (h>0) {
-          $(el).parents('.ratiowrap:first').css({'padding-bottom':'','max-height': h + 'px'});
-        }
-      }
-    });
+    // The eyes they move
+    _updateNateEyes();
+    $('body').mousemove(_moveNateEyes);
 
     // Keyboard nerds rejoice!
     $(document).keydown(function(e) {
@@ -113,6 +103,23 @@ var Nb = (function($) {
       }
     });
 
+    function _moveNateEyes(evt) {
+      $.each($nate_eyes, function(index, $eye) {
+        var center_x = $eye.offset.left + ($eye.el[0].getBoundingClientRect().width / 2),
+            center_y = $eye.offset.top + ($eye.el[0].getBoundingClientRect().height / 2),
+            mouse_x = evt.pageX,
+            mouse_y = evt.pageY,
+            radians = Math.atan2(mouse_x - center_x, mouse_y - center_y),
+            degree = (radians * (180 / Math.PI) * -1),
+            m = mouse_x > center_x ? 5 : -5;
+        $eye.el.css({
+          '-webkit-transform': 'translate(' + (m + -5 * Math.sin(degree * Math.PI / 180)) + 'px,' + (5 * Math.cos(degree * Math.PI / 180)) + 'px)',
+          '-moz-transform': 'translate(' + (m + -5 * Math.sin(degree * Math.PI / 180)) + 'px,' + (5 * Math.cos(degree * Math.PI / 180)) + 'px)'
+        });
+      });
+    }
+
+
     // Search submit does nothing
     $('.search').on('submit', function(e) {
       e.preventDefault();
@@ -162,7 +169,7 @@ var Nb = (function($) {
       _colorStache(this);
       if (State.url==this.href) {
         // If clicking nav header when in a section, just scroll to top
-        _scrollBody($('body'), 250, 0);
+        _scrollBody('#top', 250);
       } else {
         // Otherwise push page to History
         History.pushState({}, '', this.href);
@@ -225,8 +232,6 @@ var Nb = (function($) {
     _getSectionVar();
     _initStateHandling();
     setTimeout(_showPage, 150);
-
-    $('#stache').velocity({ fill: '#3F2004' });
 
   } // end init()
 
@@ -378,7 +383,9 @@ var Nb = (function($) {
     var bg = $(el).css('background-color');
     var hex = _rgb2hex(bg);
     if (hex) {
-      $('#stache').stop().velocity({ fill: hex });
+      $.each($nate_eyes, function(index, $eye) {
+        $eye.el.css('fill', hex);
+      });
     }
   }
 
@@ -420,7 +427,6 @@ var Nb = (function($) {
       method: 'get',
       dataType: 'html',
       success: function(response) {
-        console.log('foo',response);
         page_cache[encodeURIComponent(State.url)] = response;
         _updatePage();
       }
@@ -465,26 +471,16 @@ var Nb = (function($) {
 
     // Loading new page, scroll body to top
     if (scroll_to_top) {
-      _scrollBody($('body'), 250, 0);
+      _scrollBody('#top', 250);
       scroll_to_top = false;
     }
-    $('.lazy[width]:not(.wrapped):not(.loaded)').each(function() {
-      var w = this.getAttribute('width');
-      var h = this.getAttribute('height');
-      if (h>0 && w>0) {
-        var ratio = h / w * 100;
-        $(this).wrap('<div class="ratiowrap" style="padding-bottom:' + ratio + '%;max-width:' + w + 'px;"></div>');
-      }
-    });
-
-    // Re-init lazyload
-    lazyloader.update();
 
     // Add loaded class to init page transition animations
     setTimeout(function() {
       $('main').addClass('loaded');
     }, 150);
 
+    _updateNateEyes();
   }
 
   // Function to update document title after state change
@@ -509,16 +505,22 @@ var Nb = (function($) {
   // Go home
   function _showNav() {
     History.pushState({}, '', root_url);
+    _updateNateEyes();
   }
 
-  // Scroll to location in body or container element
-  function _scrollBody(element, duration, delay, offset, container) {
-    element.velocity('scroll', {
-      duration: duration,
-      delay: delay,
-      offset: (typeof offset !== 'undefined' ? offset : 0),
-      container: (typeof container !== 'undefined' ? container : null)
-    }, 'easeOutSine');
+  function _updateNateEyes() {
+    setTimeout(function() {
+      $nate_eyes = [];
+      $('#nate-eyes,#nate-eyes-2').each(function() {
+        $nate_eyes.push({ el: $(this), offset: $(this).offset() });
+      });
+    }, 250);
+  }
+
+  function _scrollBody(el, duration) {
+    if ($(el).length) {
+      $('html, body').animate({scrollTop: $(el).offset().top}, duration, 'easeInOutSine');
+    }
   }
 
   // Larger clicker areas ftw (w/ support for target and ctrl/cmd+click)
