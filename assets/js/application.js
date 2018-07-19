@@ -142,7 +142,7 @@ var Nb = (function($) {
     }
 
     // Natehead clicks
-    $(document).on('click', '#natehead,h1.title', function(e) {
+    $(document).on('click', '#natehead, h1.title', function(e) {
       e.preventDefault();
       if (document.body.className==='') {
         var easter = eggs[egg_at];

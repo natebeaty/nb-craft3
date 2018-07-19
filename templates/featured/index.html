@@ -19,9 +19,9 @@
       {% if featuredImage %}
       <article class="bigclicky">
         <div class="ratiowrap" style="padding-bottom: {{ featuredImage.getHeight('thumb') / featuredImage.getWidth('thumb') * 100 }}%">
-          <img class="lazy wrapped"
-            data-original="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }}"
-            data-original-set="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }} 250w, {{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb') }} 500w"
+          <img class="wrapped"
+            src="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }}"
+            srcset="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }} 250w, {{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb') }} 500w"
             sizes="(max-width: 768px) 100vw, calc((100vw - 90px) / 4)"
             alt="{{ featuredImage.title }}"
           />

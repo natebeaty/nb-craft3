@@ -255,6 +255,22 @@ body.active-comics nav.main a.comics {
   transform: scale(.98);
   transition: all .5s ease-out;
 }
+
+// No javascript
+.no-js {
+  .is-single,
+  .page-content {
+    opacity: 1;
+  }
+  .x,
+  .s {
+    display: none !important;
+  }
+  .bigclicky {
+    cursor: auto;
+  }
+}
+
 main.loaded {
   .is-single,
   .page-content {

@@ -102,8 +102,8 @@ gulp.task('rev', function() {
 gulp.task('copy', function() {
   gulp.src(['assets/js/modernizr.custom.js'])
     .pipe(gulp.dest('web/assets/dist/js/'));
-  return gulp.src(['assets/images/*'])
-    .pipe(gulp.dest('web/assets/dist/images/'));
+  return gulp.src(['assets/img/*'])
+    .pipe(gulp.dest('web/assets/dist/img/'));
 });
 
 // Folders to watch for changes
