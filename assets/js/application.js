@@ -115,6 +115,7 @@ var Nb = (function($) {
             degree = (radians * (180 / Math.PI) * -1),
             m = mouse_x > center_x ? 5 : -5;
         $eye.el.css({
+          'transform': 'translate(' + (m + -5 * Math.sin(degree * Math.PI / 180)) + 'px,' + (5 * Math.cos(degree * Math.PI / 180)) + 'px)',
           '-webkit-transform': 'translate(' + (m + -5 * Math.sin(degree * Math.PI / 180)) + 'px,' + (5 * Math.cos(degree * Math.PI / 180)) + 'px)',
           '-moz-transform': 'translate(' + (m + -5 * Math.sin(degree * Math.PI / 180)) + 'px,' + (5 * Math.cos(degree * Math.PI / 180)) + 'px)'
         });
@@ -514,9 +515,9 @@ var Nb = (function($) {
     setTimeout(function() {
       $nate_eyes = [];
       $('#nate-eyes,#nate-eyes-2').each(function() {
-        $nate_eyes.push({ el: $(this), offset: $(this).offset() });
+        $nate_eyes.push({ el: $(this), offset: $(this)[0].getBoundingClientRect() });
       });
-    }, 250);
+    }, 500);
   }
 
   function _scrollBody(el, duration) {
