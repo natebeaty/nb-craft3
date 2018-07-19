@@ -828,14 +828,19 @@ img.lazy {
 
 // Easter eggs
 #natehead {
-  .dizzy,.jab,.pow {
-    transform-origin: center;
-  }
+  // &.dizzy,
+  // &.jab,
+  // &.pow {
+  //   transform-origin: center;
+  // }
+  &.dizzy svg { animation: dizzy 2s forwards ease-out; }
+  &.jab svg { animation: jab 2s forwards ease-in-out; }
+  &.pow svg { animation: pow 2s forwards ease-in-out; }
+  &.wizard svg { animation: wizard 2s forwards ease-in-out; }
+  &.spiral svg { animation: spiral 2s forwards; }
+  &.chunkers svg { animation: chunkers 1s forwards; }
+  &.spinny svg { animation: spinny 2s forwards; }
 }
-.dizzy svg { animation: dizzy 2s forwards ease-out; }
-.jab svg { animation: jab 2s forwards ease-in-out; }
-.pow svg { animation: pow 2s forwards ease-in-out; }
-.wizard svg { animation: wizard 2s forwards ease-in-out; }
 
 @keyframes dizzy {
   0% { transform: rotate(0deg); }
@@ -863,6 +868,23 @@ img.lazy {
   79.999% { transform: translate(-20vw,-20vh) scale(.9); opacity: 0; }
   80% { transform: translate(20vw,20vh) scale(1); opacity: 1; }
   99.999% { transform: translate(20vw,20vh) scale(.9); opacity: 0; }
+}
+@keyframes spiral {
+  20% { transform: rotate(360deg) translate(150px) rotate(-360deg); }
+  75% { transform: rotate(-360deg) translate(-150px) rotate(360deg); }
+  100% { transform: rotate(0deg) translate(0px) rotate(-0deg); }
+}
+@keyframes chunkers {
+  10%, 90% { transform: translate3d(-50px, 10px, 0); }
+  20%, 80% { transform: translate3d(50px, 0, 10px); }
+  30%, 70% { transform: translate3d(50px, 10px, 0); }
+  40%, 60% { transform: translate3d(-50px, 0, 10px); }
+}
+@keyframes spinny {
+  10% { transform: translate3d(-150px, 10px, 100px) rotate(90deg); }
+  30% { transform: translate3d(150px, 100px, 10px) scale(1.5); }
+  50% { transform: translate3d(150px, 10px, -100px) rotate(-90deg); }
+  70% { transform: translate3d(-150px, -100px, 10px) scale(5); }
 }
 
 // Wrap for images to force layout based on image ratio

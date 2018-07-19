@@ -23,11 +23,13 @@ var Nb = (function($) {
       searching = false,
       checking_out = false,
       search_timer,
-      eggs = ['dizzy', 'jab', 'pow', 'wizard'],
+      eggs = ['spinny', 'chunkers', 'spiral', 'dizzy', 'jab', 'pow', 'wizard'],
       egg_at = 0,
       $nate_eyes = [];
 
   function _init() {
+    shuffleArray(eggs);
+
     // Localstorage cart
     cart = localStorage.getItem('Nb.cart') ? JSON.parse(localStorage.getItem('Nb.cart')) : [];
     $('.cart').toggleClass('cart-active', cart.length>0);
@@ -151,7 +153,7 @@ var Nb = (function($) {
     // Natehead clicks
     $(document).on('click', '#natehead, h1.title', function(e) {
       e.preventDefault();
-      if (document.body.className==='') {
+      if (document.body.className==='home') {
         var easter = eggs[egg_at];
         $('#natehead').addClass(easter);
         egg_at = (egg_at === eggs.length - 1) ? 0 : egg_at + 1;
@@ -643,3 +645,12 @@ var Nb = (function($) {
 
 // Fire up the mothership
 jQuery(document).ready(Nb.init);
+
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}
