@@ -153,7 +153,7 @@ var Nb = (function($) {
     // Natehead clicks
     $(document).on('click', '#natehead, h1.title', function(e) {
       e.preventDefault();
-      if (document.body.className==='home') {
+      if (section_in == 'home') {
         var easter = eggs[egg_at];
         $('#natehead').addClass(easter);
         egg_at = (egg_at === eggs.length - 1) ? 0 : egg_at + 1;
