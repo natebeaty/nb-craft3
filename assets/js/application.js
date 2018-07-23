@@ -113,7 +113,7 @@ var Nb = (function($) {
             mouse_y = evt.pageY,
             radians = Math.atan2(mouse_x - center_x, mouse_y - center_y),
             degree = (radians * (180 / Math.PI) * -1),
-            m = mouse_x > center_x ? 5 : -5;
+            m = mouse_x > center_x ? Math.min(5, mouse_x-center_x) : Math.max(-5, mouse_x-center_x);
         $eye.el.css({
           'transform': 'translate(' + (m + -5 * Math.sin(degree * Math.PI / 180)) + 'px,' + (5 * Math.cos(degree * Math.PI / 180)) + 'px)',
           '-webkit-transform': 'translate(' + (m + -5 * Math.sin(degree * Math.PI / 180)) + 'px,' + (5 * Math.cos(degree * Math.PI / 180)) + 'px)',
