@@ -108,7 +108,7 @@ var Nb = (function($) {
     function _moveNateEyes(evt) {
       $.each($nate_eyes, function(index, $eye) {
         var center_x = $eye.offset.left + ($eye.el[0].getBoundingClientRect().width / 2),
-            center_y = $eye.offset.top + ($eye.el[0].getBoundingClientRect().height / 2),
+            center_y = $eye.offset.top + window.scrollY + ($eye.el[0].getBoundingClientRect().height / 2),
             mouse_x = evt.pageX,
             mouse_y = evt.pageY,
             radians = Math.atan2(mouse_x - center_x, mouse_y - center_y),
