@@ -517,7 +517,7 @@ var Nb = (function($) {
       $('#nate-eyes,#nate-eyes-2').each(function() {
         $nate_eyes.push({ el: $(this), offset: $(this)[0].getBoundingClientRect() });
       });
-    }, 500);
+    }, 750);
   }
 
   function _scrollBody(el, duration) {
