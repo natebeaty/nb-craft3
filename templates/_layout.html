@@ -18,15 +18,6 @@
   <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
   <link rel="shortcut icon" href="{{ rev('img/favicon.png') }}">
   <script type="text/javascript" src="{{ rev('js/modernizr.custom.js') }}"></script>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-248215-5', 'auto');
-    ga('send', 'pageview');
-  </script>
 </head>
 
 <body class="{% if currentUser %}logged-in {% endif %}{% if bodyClass is defined %}{{ bodyClass }} {% endif %}{{ craft.app.request.getSegment(1) ? 'in-section active-'~craft.app.request.getSegment(1) : 'home' }}"{% if bodyId is defined %} id="{{ bodyId }}"{% endif %}>
