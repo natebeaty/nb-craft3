@@ -29,6 +29,11 @@ a.buy {
   margin: 8px 10px 4px 0;
   outline: none;
   cursor: pointer;
+
+  @include min-screen($breakpoint-medium) {
+    padding: 20px;
+  }
+
 }
 a.buy {
   margin: 10px 0;

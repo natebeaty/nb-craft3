@@ -34,11 +34,17 @@ body {
 .h1,h1 {
   font: italic 24px/1 "Anonymous Pro", monospace;
   margin: 1em 0 .5em;
+  @include min-screen($breakpoint-large) {
+    font: italic 32px/1 "Anonymous Pro", monospace;
+  }
 }
 .h2,h2,
 .h3,h3 {
   font: italic 18px/1 "Anonymous Pro", monospace;
   margin: 1em 0 .5em;
+  @include min-screen($breakpoint-large) {
+    font: italic 24px/1.2 "Anonymous Pro", monospace;
+  }
 }
 main {
   article>h1 {
@@ -481,19 +487,26 @@ body.in-section {
       width: calc( (100% - 30px) / 4 );
       cursor: pointer;
     }
+    @include min-screen($breakpoint-large) {
+      h1 {
+        a {
+          padding: 20px;
+        }
+      }
+    }
   }
 }
 // notouch hovers
 .no-touchevents {
   .image-list {
-    .category-shorts article,
-    .category-oldies article,
-    .category-kids article {
-      opacity: .9;
-      &:hover {
-        opacity: 1;
-      }
-    }
+    // .category-shorts article,
+    // .category-oldies article,
+    // .category-kids article {
+    //   opacity: .9;
+    //   &:hover {
+    //     opacity: 1;
+    //   }
+    // }
     article {
       @include min-screen($breakpoint-medium) {
         h1 {
