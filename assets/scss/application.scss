@@ -638,6 +638,9 @@ body.active-journal {
   h1 a,
   .user-content a:not(.buy) {
     color: $link_dark;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   @include min-screen($breakpoint-medium) {
     #natehead {
