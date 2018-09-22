@@ -86,7 +86,7 @@ nav.main {
     z-index: 9;
     width: 50%;
     height: 50vh;
-    transition: all .3s, border-color 0.01s, background 0.01s, font 0.01s;
+    transition: border 0.25s steps(4), background 0.01s, font 0.01s;
     border: 0 solid rgba(0,0,0,0);
     span {
       display: block;
@@ -472,7 +472,7 @@ body.in-section {
       background: black;
       a {
         display: block;
-        padding: 8px 10px;
+        padding: 10px;
         color: white;
         text-decoration: none;
       }
@@ -517,14 +517,13 @@ body.in-section {
           h1 {
             z-index: 3;
             overflow: hidden;
-            transition: max-height .15s, visibility 0s .15s;
+            transition: max-height .15s steps(2), visibility 0s;
             margin-right: 20px;
             position: absolute;
             bottom: 0;
             left: 0;
             visibility: visible;
             max-height: 100px;
-            transition: max-height .15s, visibility 0s;
           }
         }
       }

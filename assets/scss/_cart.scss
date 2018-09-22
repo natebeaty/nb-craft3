@@ -19,19 +19,24 @@
 .cart button,
 a.buy {
   border: none;
-  padding: 8px 12px 8px 10px;
-  background: black;
+  padding: 10px;
+  background: $white;
   display: inline-block;
   text-decoration: none;
-  color: white;
+  color: $black;
   text-transform: uppercase;
   font: italic 18px/1 "Anonymous Pro", monospace;
   margin: 8px 10px 4px 0;
   outline: none;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    text-decoration: underline;
+  }
 
   @include min-screen($breakpoint-medium) {
-    padding: 20px;
+    padding: 10px;
   }
 
 }
