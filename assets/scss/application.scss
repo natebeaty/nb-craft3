@@ -29,7 +29,7 @@ body {
   @include min-screen($breakpoint-large) {
     font: 17px/1.5 "Anonymous Pro", monospace;
   }
-  color: white;
+  color: $white;
 }
 .h1,h1 {
   font: italic 24px/1 "Anonymous Pro", monospace;
@@ -53,7 +53,7 @@ main {
   h1 a,
   h2 a,
   h3 a{
-    color: white;
+    color: $white;
   }
 }
 p {
@@ -77,7 +77,7 @@ nav.main {
   a {
     font: italic 24px/1 "Anonymous Pro", monospace;
     -webkit-font-smoothing: antialiased;
-    color: white;
+    color: $white;
     text-transform: uppercase;
     letter-spacing: -1px;
     text-decoration: none;
@@ -321,7 +321,7 @@ main.loaded {
 h1.title {
   font: italic 20px/1 "Anonymous Pro";
   -webkit-font-smoothing: antialiased;
-  color: white;
+  color: $white;
   text-transform: uppercase;
   letter-spacing: -1px;
   position: fixed;
@@ -468,12 +468,12 @@ body.in-section {
     h1 {
       margin: 0;
       font: normal 18px/1 "Anonymous Pro", monospace;
-      color: white;
+      color: $white;
       background: black;
       a {
         display: block;
         padding: 10px;
-        color: white;
+        color: $white;
         text-decoration: none;
       }
     }
@@ -550,7 +550,7 @@ body.in-section {
     font: italic 20px/1 "Anonymous Pro", monospace;
     text-transform: uppercase;
     text-decoration: underline;
-    color: white;
+    color: $white;
   }
   a:not(.archives) {
     display: block;
@@ -580,7 +580,7 @@ body.in-section {
       display: block;
       width: 20px;
       height: 2px;
-      background: white;
+      background: $white;
     }
     &.previous::after,
     &.next::after {
@@ -638,9 +638,9 @@ body.active-journal {
   h1 a,
   .user-content a:not(.buy) {
     color: $link_dark;
-    &:hover {
-      text-decoration: underline;
-    }
+  }
+  h1 a:hover {
+    text-decoration: underline;
   }
   @include min-screen($breakpoint-medium) {
     #natehead {
@@ -740,7 +740,7 @@ body.active-journal {
     margin: 0 0 1em;
   }
   // p.answer {
-  //   color: white;
+  //   color: $white;
   // }
   code {
     background: rgba(255,255,255,.1);
@@ -787,7 +787,7 @@ body.active-about {
   li a {
     font: italic 18px/1 "Anonymous Pro", monospace;
     text-decoration: underline;
-    color: white;
+    color: $white;
     display: inline-block;
     padding: 6px 10px;
   }
@@ -976,7 +976,7 @@ img.lazy {
     font: 50px/1.2 "Anonymous Pro", monospace;
     letter-spacing: -.03em;
     padding: 0;
-    color: white;
+    color: $white;
     position: absolute;
     left: 20px;
     top: 28px;
@@ -1005,7 +1005,7 @@ img.lazy {
       font: italic 24px/1.2 "Anonymous Pro", monospace;
     }
     padding: 10px;
-    color: white;
+    color: $white;
     a {
       display: block;
       text-decoration: underline;
@@ -1020,7 +1020,7 @@ img.lazy {
           position: absolute;
           left: 0;
           top: 0;
-          color: white;
+          color: $white;
           font: 24px/1.2 "Anonymous Pro", monospace;
         }
       }
@@ -1049,7 +1049,7 @@ body.checking-out {
     display: none;
   }
   .flip {
-    background: white;
+    background: $white;
   }
 }
 
@@ -1072,11 +1072,11 @@ body.active-404 {
     font-size: 100px;
     line-height: 1;
     margin: 0;
-    color: #3F2004;
+    color: $white;
   }
   h2 {
-    background: #AA0C00;
-    color: #F9B6FA;
+    background: #fff;
+    color: #AA0C00;
     padding: 20px;
     margin: 0;
     font-size: 40px;
