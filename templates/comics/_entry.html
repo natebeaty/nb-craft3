@@ -17,15 +17,12 @@
       {% endif %}
     </div>
     {% for image in entry.comicPages.all() %}
-      <div class="ratiowrap" style="padding-bottom:{{ image.height / image.width * 100 }}%;max-width:{{ image.width }}px;max-height:{{ image.height }}px">
-        <img class="wrapped"
-          width="{{ image.width }}" height="{{ image.height }}"
-          src="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }}"
-          srcset="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }} 750w, {{ craft.app.config.general.cdnUrl }}{{ image.getUrl() }} {{ image.width }}w,"
-          sizes="(max-width: 768px) 100vw, (max-width: 1500px) 750px, 960px"
-          alt="{{ image.title ? image.title : entry.title }}"
-        />
-      </div>
+      <img width="{{ image.width }}" height="{{ image.height }}"
+        src="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }}"
+        srcset="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }} 750w, {{ craft.app.config.general.cdnUrl }}{{ image.getUrl() }} {{ image.width }}w,"
+        sizes="(max-width: 768px) 100vw, (max-width: 1500px) 750px, 960px"
+        alt="{{ image.title ? image.title : entry.title }}"
+      />
     {% endfor %}
   </article>
 

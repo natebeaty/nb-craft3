@@ -18,14 +18,11 @@
       {% set featuredImage = entry.featuredImage[0] ?? null %}
       {% if featuredImage %}
       <article class="bigclicky">
-        <div class="ratiowrap" style="padding-bottom: {{ featuredImage.getHeight('thumb') / featuredImage.getWidth('thumb') * 100 }}%">
-          <img class="wrapped"
-            src="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }}"
-            srcset="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }} 250w, {{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb') }} 500w"
-            sizes="(max-width: 768px) 100vw, calc((100vw - 90px) / 4)"
-            alt="{{ featuredImage.title }}"
-          />
-        </div>
+        <img src="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }}"
+          srcset="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }} 250w, {{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb') }} 500w"
+          sizes="(max-width: 768px) 100vw, calc((100vw - 90px) / 4)"
+          alt="{{ featuredImage.title }}"
+        />
         <h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
       </article>
       {% endif %}
