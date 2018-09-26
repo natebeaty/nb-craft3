@@ -921,31 +921,31 @@ img.lazy {
 }
 
 // Wrap for images to force layout based on image ratio
-// .ratiowrap {
-//   position: relative;
-//   height: 0;
-//   overflow: hidden;
-//   background: rgba(255,255,255,.05);
-//   transition: background .25s;
-//   img {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: auto;
-//   }
-//   &::before {
-//     @extend %loading;
-//   }
-//   &.loaded {
-//     background: none;
-//     padding-bottom: 0 !important;
-//     height: auto;
-//     img {
-//       position: relative;
-//     }
-//   }
-// }
+.ratiowrap {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  background: rgba(255,255,255,.05);
+  transition: background .25s;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  &::before {
+    @extend %loading;
+  }
+  &.loaded {
+    background: none;
+    padding-bottom: 0 !important;
+    height: auto;
+    img {
+      position: relative;
+    }
+  }
+}
 @keyframes spinner {
   100% {transform: rotate(360deg);}
 }

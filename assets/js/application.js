@@ -465,11 +465,20 @@ var Nb = (function($) {
     $('main').fitVids();
 
     // Re-init masonry
-    $('.masonryme:not(.inited)').masonry({
-      itemSelector: 'article',
-      gutter: 10
-    }).on('layoutComplete', function(){
-      $(this).addClass('inited');
+
+    $('.masonryme:not(.inited)').each(function() {
+      var $this = $(this);
+      $this.imagesLoaded()
+        .done(function(instance) {
+          $this.find('.ratiowrap').addClass('loaded');
+          var $masonry = $this.masonry({
+            itemSelector: 'article',
+            gutter: 10
+          });
+          $masonry.on('layoutComplete', function(){
+            $(this).addClass('inited');
+          });
+        });
     });
 
     // Loading new page, scroll body to top
