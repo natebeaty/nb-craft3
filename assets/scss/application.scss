@@ -70,10 +70,6 @@ img {
 // big ol' primary nav
 nav.main {
   height: 100vh;
-  margin-bottom: 50px;
-  @include min-screen($breakpoint-medium) {
-    margin-bottom: 0;
-  }
   a {
     font: italic 24px/1 "Anonymous Pro", monospace;
     -webkit-font-smoothing: antialiased;
@@ -151,7 +147,7 @@ nav.main {
 // primary content area
 main {
   overflow-x:hidden;
-  padding: 80px 10px 10px;
+  padding: 80px 20px 10px;
   @include min-screen($breakpoint-medium) {
     padding: 100px 70px 150px 20px;
   }
@@ -600,8 +596,16 @@ body.in-section {
 // comics
 body.active-comics {
   background: $comics;
+  .comic-pages {
+    img {
+      margin-bottom: 10px;
+    }
+  }
+  .meta {
+    margin-bottom: 20px;
+  }
   .comic .ratiowrap {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .info {
     opacity: .5;
@@ -754,15 +758,21 @@ body.active-about {
   .user-content a {
     color: $link_dark;
   }
+  figure img {
+    display: block;
+    margin-bottom: 10px;
+  }
   @include min-screen($breakpoint-medium) {
     main {
       padding: 150px 70px 50px 20px;
       .user-content {
-        p:not(.photo) {
+        p {
           max-width: 750px;
         }
-        img {
-          width: 100%;
+        figure {
+          display: inline-block;
+          width: 33.3%;
+          float: left;
         }
       }
     }
@@ -781,15 +791,17 @@ body.active-about {
   }
 }
 .social {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  li a {
-    font: italic 18px/1 "Anonymous Pro", monospace;
-    text-decoration: underline;
-    color: $white;
+  margin: 0 -10px;
+  padding: 20px 0;
+  li {
     display: inline-block;
-    padding: 6px 10px;
+    a {
+      font: italic 18px/1 "Anonymous Pro", monospace;
+      text-decoration: underline;
+      color: $white;
+      display: inline-block;
+      padding: 6px 10px;
+    }
   }
 }
 
@@ -823,6 +835,15 @@ body.active-featured {
     }
   }
 }
+
+body.active-featured nav.main a.about,
+body.active-about nav.main a.featured,
+body.active-journal nav.main a.featured,
+body.active-comics nav.main a.featured {
+  height: auto;
+  padding-bottom: 50px;
+}
+
 
 // better centered images on large screens
 @include min-screen(960px) {

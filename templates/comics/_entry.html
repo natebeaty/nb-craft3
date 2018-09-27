@@ -16,6 +16,7 @@
         <a class="buy" href="#" data-price="{{ entry.price }}" data-title="{{ entry.title|escape }}" data-id="{{ entry.id }}">Buy — ${{ entry.price + 0 }}</a>
       {% endif %}
     </div>
+    <div class="comic-pages">
     {% for image in entry.comicPages.all() %}
       <img width="{{ image.width }}" height="{{ image.height }}"
         src="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }}"
@@ -24,6 +25,7 @@
         alt="{{ image.title ? image.title : entry.title }}"
       />
     {% endfor %}
+    </div>
   </article>
 
   {% include "partials/_pagination" %}
