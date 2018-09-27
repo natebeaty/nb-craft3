@@ -728,8 +728,8 @@ body.active-journal {
   blockquote,
   .writing-excerpt {
     padding: 0 1.5em;
-    border-left: 2px solid #ddd;
-    color: #ddd;
+    border-left: 10px solid rgba($white, 0.5);
+    color: rgba($white, 0.5);
   }
   p.caption {
     margin-top: -.5em;
@@ -808,6 +808,9 @@ body.active-about {
 // featured
 body.active-featured {
   background: $featured;
+  .description {
+    margin: 20px 0;
+  }
   @include min-screen($breakpoint-medium) {
     main {
       padding: 150px 20px 50px 70px;
