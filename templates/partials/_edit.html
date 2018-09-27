@@ -1,0 +1,3 @@
+{% if entry is defined and entry.isEditable() %}
+  <div class="edit-link"><a href="{{ entry.cpEditUrl ~ '?redirect=' ~ craft.app.request.getUrl()|url_encode }}">Edit</a></div>
+{% endif %}

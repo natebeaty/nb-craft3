@@ -1103,3 +1103,20 @@ body.active-404 {
     font-size: 40px;
   }
 }
+.edit-link {
+  text-align: right;
+  a {
+    @include button;
+  }
+}
+@include min-screen($breakpoint-medium) {
+  .edit-link {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  article:hover .edit-link {
+    display: block;
+  }
+}

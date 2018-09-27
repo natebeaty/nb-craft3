@@ -3,14 +3,15 @@
 {% if entry.seoDescription %}{% set description = entry.seoDescription %}{% endif %}
 
 {% block content %}
-	<section class="page-content" data-page="{{ craft.app.request.absoluteUrl|replace((siteUrl), '/') }}" data-page-title="{{ entry.title }}">
-	<div class="body user-content">
-		{{ entry.body }}
-	</div>
-	<ul class="social">
-		{% for block in entry.socialBlocks.all() %}
-			<li><a href="{{ block.socialURL }}">{{ block.header }}</a></li>
-		{% endfor %}
-	</ul>
-	</section>
+  <section class="page-content" data-page="{{ craft.app.request.absoluteUrl|replace((siteUrl), '/') }}" data-page-title="{{ entry.title }}">
+    {% include "partials/_edit" with {'entry': entry} %}
+    <div class="body user-content">
+      {{ entry.body }}
+    </div>
+    <ul class="social">
+      {% for block in entry.socialBlocks.all() %}
+        <li><a href="{{ block.socialURL }}">{{ block.header }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
 {% endblock %}
