@@ -2,6 +2,7 @@
   RewriteEngine On
 
   # Force SSL
+  RewriteCond %{REQUEST_URI} !\.well-known
   RewriteCond %{HTTP:X-Forwarded-SSL} !on
   RewriteCond %{HTTP_HOST} !^nb-craft\.localhost [NC]
   RewriteCond %{HTTP_HOST} !^nb-craft3\.localhost [NC]
@@ -10,6 +11,7 @@
   RedirectMatch 404 /\.git
 
   # Remove www from url
+  RewriteCond %{REQUEST_URI} !\.well-known
   RewriteCond %{HTTP_HOST} !^natebeaty\.com [NC]
   RewriteCond %{HTTP_HOST} !^nb-craft\.localhost [NC]
   RewriteCond %{HTTP_HOST} !^nb-craft3\.localhost [NC]
