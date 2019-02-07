@@ -466,23 +466,20 @@ var Nb = (function($) {
 
     // Re-init masonry
 
-    $('.masonryme').each(function() {
+    $('.masonryme:not(.inited)').each(function() {
       var $this = $(this);
-      if ($this.hasClass('inited')) {
-        var $masonry = $this.masonry({
-          itemSelector: 'article',
-          percentPosition: true,
-          gutter: 10
-        });
-        $masonry.on('layoutComplete', function(){
-          $(this).addClass('inited');
-        });
-        $this.imagesLoaded()
-          .done(function(instance) {
-            $this.find('.ratiowrap').addClass('loaded');
-            $this.masonry();
+      $this.imagesLoaded()
+        .done(function(instance) {
+          $this.find('.ratiowrap').addClass('loaded');
+          var $masonry = $this.masonry({
+            itemSelector: 'article',
+            percentPosition: true,
+            gutter: 10
           });
-      }
+          $masonry.on('layoutComplete', function(){
+            $(this).addClass('inited');
+          });
+        });
     });
 
     // Loading new page, scroll body to top
@@ -494,7 +491,6 @@ var Nb = (function($) {
     // Add loaded class to init page transition animations
     setTimeout(function() {
       $('main').addClass('loaded');
-      $('.masonryme').masonry();
     }, 150);
 
     _updateNateEyes();
