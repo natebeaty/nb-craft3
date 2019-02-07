@@ -482,8 +482,6 @@ var Nb = (function($) {
             $this.find('.ratiowrap').addClass('loaded');
             $this.masonry();
           });
-      } else {
-        $this.masonry();
       }
     });
 
@@ -496,6 +494,7 @@ var Nb = (function($) {
     // Add loaded class to init page transition animations
     setTimeout(function() {
       $('main').addClass('loaded');
+      $('.masonryme').masonry();
     }, 150);
 
     _updateNateEyes();
