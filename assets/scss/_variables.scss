@@ -13,13 +13,22 @@ $white: #fefefe;
 $black: #222;
 
 // Fall:
-$comics: #D05F5C;
-$journal: #98A761;
-$about: #28AAA2;
-$featured: #574F37;
-$link: #E1A500;
-$link_dark: #194A46;
-$cart: #20A2C1;
+// $comics: #D05F5C;
+// $journal: #98A761;
+// $about: #28AAA2;
+// $featured: #574F37;
+// $link: #E1A500;
+// $link_dark: #194A46;
+// $cart: #20A2C1;
+
+// Spring:
+$comics: #7F96C6;
+$journal: #848392;
+$about: #0C3D6E;
+$featured: #67BE41;
+$link: #67BE41;
+$link_dark: #67BE41;
+$cart: darken($comics, 5%);
 
 // Breakpoints
 $breakpoint-small: 480px;
