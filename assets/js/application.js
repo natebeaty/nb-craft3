@@ -464,19 +464,17 @@ var Nb = (function($) {
     // Refit them vids!
     $('main').fitVids();
 
-    // Re-init masonry
-
+    // Init masonry
     $('.masonryme:not(.inited)').each(function() {
       var $this = $(this);
       $this.imagesLoaded()
-        .done(function(instance) {
+        .done(function() {
           $this.find('.ratiowrap').addClass('loaded');
-          var $masonry = $this.masonry({
+          $this.masonry({
             itemSelector: 'article',
             percentPosition: true,
             gutter: 10
-          });
-          $masonry.on('layoutComplete', function(){
+          }).on('layoutComplete', function(){
             $(this).addClass('inited');
           });
         });
@@ -490,7 +488,9 @@ var Nb = (function($) {
 
     // Add loaded class to init page transition animations
     setTimeout(function() {
-      $('main').addClass('loaded');
+      $('main').addClass('loaded').imagesLoaded().done(function() {
+        $('.masonryme').masonry();
+      });
     }, 150);
 
     _updateNateEyes();
