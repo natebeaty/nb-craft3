@@ -466,19 +466,25 @@ var Nb = (function($) {
 
     // Re-init masonry
 
-    $('.masonryme:not(.inited)').each(function() {
+    $('.masonryme').each(function() {
       var $this = $(this);
-      $this.imagesLoaded()
-        .done(function(instance) {
-          $this.find('.ratiowrap').addClass('loaded');
-          var $masonry = $this.masonry({
-            itemSelector: 'article',
-            gutter: 10
-          });
-          $masonry.on('layoutComplete', function(){
-            $(this).addClass('inited');
-          });
+      if ($this.hasClass('inited')) {
+        var $masonry = $this.masonry({
+          itemSelector: 'article',
+          percentPosition: true,
+          gutter: 10
         });
+        $masonry.on('layoutComplete', function(){
+          $(this).addClass('inited');
+        });
+        $this.imagesLoaded()
+          .done(function(instance) {
+            $this.find('.ratiowrap').addClass('loaded');
+            $this.masonry();
+          });
+      } else {
+        $this.masonry();
+      }
     });
 
     // Loading new page, scroll body to top
