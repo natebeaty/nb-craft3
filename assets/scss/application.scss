@@ -601,6 +601,9 @@ body.active-comics {
       margin-bottom: 10px;
     }
   }
+  .user-content a {
+    color: $link_dark;
+  }
   .meta {
     margin-bottom: 20px;
   }
@@ -641,7 +644,7 @@ body.active-journal {
   }
   h1 a,
   .user-content a:not(.buy) {
-    color: $link_dark;
+    // color: $link_dark;
   }
   h1 a:hover {
     text-decoration: underline;
@@ -719,6 +722,7 @@ body.active-journal {
   a:not(.buy) {
     color: $link;
     text-decoration: underline;
+    display: inline-block;
   }
   p.question {
     text-decoration: underline;
@@ -755,9 +759,6 @@ body.active-journal {
 // about
 body.active-about {
   background: $about;
-  .user-content a {
-    color: $link_dark;
-  }
   figure img {
     display: block;
     margin-bottom: 10px;
@@ -810,6 +811,9 @@ body.active-featured {
   background: $featured;
   .description {
     margin: 20px 0;
+  }
+  .user-content a {
+    color: $link_dark;
   }
   @include min-screen($breakpoint-medium) {
     main {
