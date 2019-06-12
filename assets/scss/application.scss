@@ -611,7 +611,7 @@ body.active-comics {
     margin-bottom: 20px;
   }
   .info {
-    opacity: .5;
+    opacity: 0.65;
   }
   @include min-screen($breakpoint-medium) {
     #natehead {
@@ -732,12 +732,12 @@ body.active-journal {
   blockquote,
   .writing-excerpt {
     padding: 0 1.5em;
-    border-left: 10px solid rgba($white, 0.75);
-    color: rgba($white, 0.75);
+    border-left: 10px solid rgba($white, 0.65);
+    color: rgba($white, 0.65);
   }
   p.caption {
     margin-top: -0.5em;
-    opacity: 0.5;
+    opacity: 0.65;
     font-size: small;
   }
   .video-container {
