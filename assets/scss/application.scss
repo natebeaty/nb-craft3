@@ -732,12 +732,12 @@ body.active-journal {
   blockquote,
   .writing-excerpt {
     padding: 0 1.5em;
-    border-left: 10px solid rgba($white, 0.5);
-    color: rgba($white, 0.5);
+    border-left: 10px solid rgba($white, 0.75);
+    color: rgba($white, 0.75);
   }
   p.caption {
-    margin-top: -.5em;
-    opacity: .5;
+    margin-top: -0.5em;
+    opacity: 0.5;
     font-size: small;
   }
   .video-container {
@@ -751,7 +751,7 @@ body.active-journal {
   //   color: $white;
   // }
   code {
-    background: rgba(255,255,255,.1);
+    background: rgba(255, 255, 255, 0.1);
     padding: 2px 4px;
   }
 }
