@@ -12,7 +12,6 @@
 {% set relatedCats = craft.categories.relatedTo(entries) %}
 
 {% block content %}
-  {% cache unless currentUser %}
   <section class="comics-list image-list page-content" data-page="{{ craft.app.request.absoluteUrl|replace((siteUrl), '/') }}" data-page-title="{{ title }}">
   {# Loop the categories #}
   {% for category in relatedCats.all() %}
@@ -46,5 +45,4 @@
 
   {% endfor %}
   </section>
-  {% endcache %}
 {% endblock %}
