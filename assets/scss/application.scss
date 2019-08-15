@@ -249,6 +249,9 @@ body.active-comics nav.main a.comics {
 }
 .journal-list article {
   margin-bottom: 40px;
+  h1 a {
+    color: $link;
+  }
 }
 .is-single,
 .page-content {
@@ -546,7 +549,7 @@ body.in-section {
     font: italic 20px/1 "Anonymous Pro", monospace;
     text-transform: uppercase;
     text-decoration: underline;
-    color: $white;
+    color: $link;
   }
   a:not(.archives) {
     display: block;
@@ -707,7 +710,7 @@ body.active-journal {
       }
       a {
         @extend .h2;
-        color: $link_dark;
+        color: $link;
         text-decoration: underline;
       }
     }
