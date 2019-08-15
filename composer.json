@@ -19,7 +19,7 @@
     "rss": "https://craftcms.com/changelog.rss"
   },
   "require": {
-    "craftcms/cms": "3.1.30",
+    "craftcms/cms": "3.2.10",
     "vlucas/phpdotenv": "^2.4.0",
     "topshelfcraft/wordsmith": "3.0.5",
     "clubstudioltd/craft-asset-rev": "6.0.2",
@@ -27,7 +27,7 @@
     "craftcms/redactor": "2.3.3.2",
     "mmikkel/retcon": "2.0.12",
     "verbb/expanded-singles": "1.0.7",
-    "mmikkel/cp-field-inspect": "1.0.5"
+    "mmikkel/cp-field-inspect": "1.0.6"
   },
   "autoload": {
     "psr-4": {
