@@ -606,6 +606,7 @@ body.active-comics {
   }
   .user-content a {
     color: $link_dark;
+    @include inline-link($link_dark, $comics);
   }
   .meta {
     margin-bottom: 20px;
@@ -647,7 +648,7 @@ body.active-journal {
   }
   h1 a,
   .user-content a:not(.buy) {
-    // color: $link_dark;
+    @include inline-link($link, $journal);
   }
   h1 a:hover {
     text-decoration: underline;
@@ -723,6 +724,7 @@ body.active-journal {
     font-style: italic;
   }
   a:not(.buy) {
+    @include inline-link($link_dark, $white);
     color: $link;
     text-decoration: underline;
     display: inline-block;
@@ -766,6 +768,9 @@ body.active-about {
     display: block;
     margin-bottom: 10px;
   }
+  .user-content a {
+    @include inline-link($link, $about);
+  }
   @include min-screen($breakpoint-medium) {
     main {
       padding: 150px 70px 50px 20px;
@@ -803,6 +808,7 @@ body.active-about {
       font: italic 18px/1 "Anonymous Pro", monospace;
       text-decoration: underline;
       color: $white;
+      @include inline-link($white, $about);
       display: inline-block;
       padding: 6px 10px;
     }
@@ -817,6 +823,7 @@ body.active-featured {
   }
   .user-content a {
     color: $link_dark;
+    @include inline-link($link_dark, $featured);
   }
   @include min-screen($breakpoint-medium) {
     main {
