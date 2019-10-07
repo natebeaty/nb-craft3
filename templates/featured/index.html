@@ -22,6 +22,7 @@
           srcset="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }} 250w, {{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb') }} 500w"
           sizes="(max-width: 768px) 100vw, calc((100vw - 90px) / 4)"
           alt="{{ featuredImage.title }}"
+          loading="lazy"
         />
         <h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
       </article>
