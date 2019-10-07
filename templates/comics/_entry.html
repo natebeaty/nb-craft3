@@ -24,6 +24,7 @@
         srcset="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }} 750w, {{ craft.app.config.general.cdnUrl }}{{ image.getUrl() }} {{ image.width }}w,"
         sizes="(max-width: 768px) 100vw, (max-width: 1500px) 750px, 960px"
         alt="{{ image.title ? image.title : entry.title }}"
+        loading="lazy"
       />
     {% endfor %}
     {% include "partials/_edit" with {'entry': entry} %}
