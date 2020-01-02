@@ -1,6 +1,9 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set title = entry.title %}
-{% if entry.seoDescription %}{% set description = entry.seoDescription %}{% endif %}
+{% set description = entry.body|striptags[:160] %}
+{% if entry.seoDescription %}
+	{% set description = entry.seoDescription %}
+{% endif %}
 
 {% set params = craft.entries.section('journal').orderBy('postDate desc, id asc') %}
 {% set prevEntry = entry.getPrev(params) %}
