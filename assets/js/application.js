@@ -26,7 +26,9 @@ var Nb = (function($) {
       search_timer,
       eggs = ['spinny', 'chunkers', 'spiral', 'dizzy', 'jab', 'pow', 'wizard'],
       egg_at = 0,
-      $nate_eyes = [];
+      $nate_eyes = [],
+      lightbox,
+      lightbox_open = false;
 
   function _init() {
     shuffleArray(eggs);
@@ -44,33 +46,35 @@ var Nb = (function($) {
 
     // Keyboard nerds rejoice!
     $(document).keydown(function(e) {
-      // Esc
-      if (e.keyCode === 27) {
-        // Trigger X click to close search/cart/checkout/go back/go home
-        $('.x').trigger('click');
-      }
+      if (!lightbox_open) {
+        // Esc
+        if (e.keyCode === 27) {
+          // Trigger X click to close search/cart/checkout/go back/go home
+          $('.x').trigger('click');
+        }
 
-      if (!searching && !checking_out) {
-        if (!e.metaKey && !e.shiftKey && e.keyCode === 191) {
-          e.preventDefault();
-          // Pressing forward-slash opens search
-          _showSearch();
+        if (!searching && !checking_out) {
+          if (!e.metaKey && !e.shiftKey && e.keyCode === 191) {
+            e.preventDefault();
+            // Pressing forward-slash opens search
+            _showSearch();
 
-        } else if (!e.metaKey && e.keyCode === 37) {
-          // Left arrow key triggers previous post
-          if (section_in != 'home' && $('.pagination a[rel=previous]').length) {
-            $('.pagination a[rel=previous]').trigger('click');
+          } else if (!e.metaKey && e.keyCode === 37) {
+            // Left arrow key triggers previous post
+            if (section_in != 'home' && $('.pagination a[rel=previous]').length) {
+              $('.pagination a[rel=previous]').trigger('click');
+            }
+
+          } else if (!e.metaKey && e.keyCode === 39) {
+            // Right arrow key triggers previous post
+            if (section_in != 'home' && $('.pagination a[rel=next]').length) {
+              $('.pagination a[rel=next]').trigger('click');
+            }
+
+          } else if (!e.metaKey && !e.shiftKey && e.keyCode >= 48 && e.keyCode <= 90) {
+            // Pressing any letter starts searching ... annoying?
+            _showSearch();
           }
-
-        } else if (!e.metaKey && e.keyCode === 39) {
-          // Right arrow key triggers previous post
-          if (section_in != 'home' && $('.pagination a[rel=next]').length) {
-            $('.pagination a[rel=next]').trigger('click');
-          }
-
-        } else if (!e.metaKey && !e.shiftKey && e.keyCode >= 48 && e.keyCode <= 90) {
-          // Pressing any letter starts searching ... annoying?
-          _showSearch();
         }
       }
 
@@ -496,7 +500,12 @@ var Nb = (function($) {
 
     // Lightbox
     if ($('a.blowup').length) {
-      $('a.blowup').simpleLightbox();
+      lightbox = $('a.blowup').simpleLightbox();
+      $('a.blowup').on('shown.simplelightbox', function() {
+        lightbox_open = true;
+      }).on('closed.simplelightbox', function() {
+        lightbox_open = false;
+      });
     }
 
     _updateNateEyes();
