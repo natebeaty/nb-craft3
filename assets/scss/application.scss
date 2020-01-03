@@ -536,20 +536,16 @@ body.in-section {
   @include min-screen($breakpoint-large) {
     max-width: 960px;
   }
-  height: 40px;
+  height: 30px;
   margin: 20px auto;
   position: relative;
+  text-align: center;
+  line-height: 30px;
   a.archives {
-    display: block;
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-40%);
-    width: 100px;
     font: italic 20px/1 "Anonymous Pro", monospace;
     text-transform: uppercase;
-    text-decoration: underline;
     color: $link;
+    @include inline-link($link, $journal);
   }
   a:not(.archives) {
     display: block;
@@ -698,6 +694,7 @@ body.active-journal {
     }
     li {
       position: relative;
+      margin-bottom: 10px;
       .len {
         width: 100px;
         height: 2px;
@@ -712,7 +709,7 @@ body.active-journal {
       a {
         @extend .h2;
         color: $link;
-        text-decoration: underline;
+        @include inline-link($link, $journal);
       }
     }
   }
