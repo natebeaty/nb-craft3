@@ -42,6 +42,10 @@
     text-decoration: underline;
   }
 }
+button.buy,
+a.button {
+  @include button;
+}
 
 // Inline link styles
 @mixin inline-link($hover_bg:$link_dark, $hover_color:$link) {

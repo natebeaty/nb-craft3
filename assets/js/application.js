@@ -586,7 +586,7 @@ var Nb = (function($) {
       _removeFromCart($(this).attr('data-id'));
     });
     // Buy buttons
-    $(document).on('click', 'a.buy', function() {
+    $(document).on('click', 'button.buy', function() {
       _addToCart({ title: $(this).attr('data-title'), price: $(this).attr('data-price'), 'quantity': 1, id: $(this).attr('data-id') });
     });
     // Cart actions

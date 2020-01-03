@@ -17,7 +17,7 @@
       <div class="body">{{ entry.body }}</div>
       <div class="info">{{ entry.shortDescription }}</div>
       {% if entry.price > 0 %}
-        <a class="buy" href="#" data-price="{{ entry.price }}" data-title="{{ entry.title|escape }}" data-id="{{ entry.id }}">Buy — ${{ entry.price + 0 }}</a>
+        <button class="buy" data-price="{{ entry.price }}" data-title="{{ entry.title|escape }}" data-id="{{ entry.id }}">Buy — ${{ entry.price + 0 }}</button>
       {% endif %}
     </div>
     <div class="comic-pages">
