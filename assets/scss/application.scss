@@ -4,6 +4,7 @@
 @import "variables";
 @import "mixins";
 @import "cart";
+@import "../bower_components/simplelightbox/dist/simplelightbox.scss";
 
 %loading {
   content: '';

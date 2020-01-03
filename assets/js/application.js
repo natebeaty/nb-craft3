@@ -9,6 +9,7 @@
 //=include "../bower_components/jquery.easing/js/jquery.easing.min.js"
 //=include "../bower_components/jquery-touchswipe/jquery.touchSwipe.js"
 //=include "../bower_components/history.js/scripts/bundled/html5/jquery.history.js"
+//=include "../bower_components/simplelightbox/dist/simple-lightbox.js"
 
 var Nb = (function($) {
 
@@ -170,7 +171,7 @@ var Nb = (function($) {
     $('nav.main a').on('click', function(e) {
       e.preventDefault();
       _colorStache(this);
-      if (State.url==this.href) {
+      if (State.url == this.href) {
         // If clicking nav header when in a section, just scroll to top
         _scrollBody('#top', 250);
       } else {
@@ -210,8 +211,8 @@ var Nb = (function($) {
     // User-content linking internally
     $(document).on('click', '.user-content a', function(e) {
       var href = this.href;
-      // if not external, push to history
-      if (!_isExternal(href)) {
+      // if not external or blowup link, push to history
+      if (!_isExternal(href) && !$(this).hasClass('blowup')) {
         e.preventDefault();
         History.pushState({}, '', href);
       } else {
@@ -493,6 +494,11 @@ var Nb = (function($) {
       });
     }, 150);
 
+    // Lightbox
+    if ($('a.blowup').length) {
+      $('a.blowup').simpleLightbox();
+    }
+
     _updateNateEyes();
   }
 
@@ -541,7 +547,7 @@ var Nb = (function($) {
     // Also shoving in general ajax link hijacking here — todo: move this to its own function for all content links
     $(document).on('click', '.bigclicky, .journal-list article h1, .journal-list.archives li a', function(e) {
       e.preventDefault();
-      var link = $(e.target).is('a') ? $(e.target) : $(this).find('h1:first a,h2:first a,a');
+      var link = $(e.target).is('a') ? $(e.target) : $(this).find('h1:first a, h2:first a, a');
       if (link.length) {
         if (e.metaKey || link.attr('target')) {
           window.open(link[0].href);
