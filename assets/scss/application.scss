@@ -58,7 +58,7 @@ main {
   }
 }
 p {
-  margin: 0 0 1em;
+  margin: 0 0 1.5em;
 }
 .hidden {
   display: none;
@@ -80,6 +80,7 @@ nav.main {
     text-decoration: none;
     display: block;
     position: fixed;
+    // position: absolute;
     z-index: 9;
     width: 50%;
     height: 50vh;
@@ -203,6 +204,19 @@ body.active-comics nav.main a.comics {
     // bottom: calc(100vh - 100px);
     bottom: auto;
     top: 53px;
+  }
+}
+
+.apron {
+  display: flex;
+  flex-wrap: wrap;
+  .sketchbook {
+    flex: 0 1 50%;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
@@ -401,6 +415,9 @@ body.in-section {
   }
   nav.main {
     height: 0;
+    a {
+      position: fixed;
+    }
     @include max-screen($breakpoint-medium) {
       height: auto;
       a {
@@ -748,7 +765,7 @@ body.active-journal {
   }
   ul {
     list-style: disc;
-    margin: 0 0 1em;
+    margin: 0 0 1.5em;
   }
   // p.answer {
   //   color: $white;

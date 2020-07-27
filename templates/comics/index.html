@@ -24,13 +24,13 @@
 
         {% set featuredImage = entry.featuredImage[0] ?? null %}
         {% if featuredImage %}
-          <article class="bigclicky {{ (entry.slug=='wolfman') ? "wide" : "" }}">
+          <article class="bigclicky {{ (entry.size=='large') ? "wide" : "" }}">
             <div class="pad">
               <div class="ratiowrap" style="padding-bottom: {{ featuredImage.height / featuredImage.width * 100 }}%">
                 <img class="wrapped"
                   src="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }}"
                   srcset="{{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb1x') }} 250w, {{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumb') }} 500w, {{ craft.app.config.general.cdnUrl }}{{ featuredImage.getUrl('thumbLarge') }} 1000w"
-                  sizes="(max-width: 768px) 100vw, {{ (entry.slug=='wolfman') ? "calc((100vw - 90px) / 2)" : "calc((100vw - 90px) / 4)" }}"
+                  sizes="(max-width: 768px) 100vw, {{ (entry.size=='large') ? "calc((100vw - 90px) / 2)" : "calc((100vw - 90px) / 4)" }}"
                   alt="{{ featuredImage.title ? featuredImage.title : entry.title }}"
                   loading="lazy"
                 />
