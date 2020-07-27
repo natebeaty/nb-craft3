@@ -653,8 +653,12 @@ body.active-comics {
 
 // journal
 body.active-journal {
+  h2.date {
+    margin-top: 1.5em;
+  }
   p.date {
     opacity: 0.65;
+    margin-bottom: 1em;
   }
   background: $journal;
   article.journal h1 {
