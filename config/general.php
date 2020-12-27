@@ -48,5 +48,6 @@ return [
     'production' => [
         // Base site URL
         'siteUrl' => 'https://natebeaty.com',
+        'cdnUrl' => 'https://static.natebeaty.com',
     ],
 ];
