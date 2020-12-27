@@ -44,9 +44,13 @@ return [
 
     // Staging environment settings
     'staging' => [
+        // Disable project config changes on production
+        'allowAdminChanges' => false,
     ],
 
     // Production environment settings
     'production' => [
+        // Disable project config changes on production
+        'allowAdminChanges' => false,
     ],
 ];
