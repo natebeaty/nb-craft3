@@ -25,26 +25,28 @@ return [
 
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
+
+        // Base site URL
+        'siteUrl' => getenv('SITE_URL'),
+
+        'aliases' => [
+            '@assetsBaseUrl' => getenv('ASSETS_BASE_URL'),
+            '@assetsBasePath' => getenv('ASSETS_BASE_PATH'),
+        ],
+
     ],
 
     // Dev environment settings
     'dev' => [
-        // Base site URL
-        'siteUrl' => 'http://nb-craft3.localhost',
-
         // Dev Mode (see https://craftcms.com/support/dev-mode)
         'devMode' => true,
     ],
 
     // Staging environment settings
     'staging' => [
-        // Base site URL
-        'siteUrl' => null,
     ],
 
     // Production environment settings
     'production' => [
-        // Base site URL
-        'siteUrl' => 'https://natebeaty.com',
     ],
 ];
