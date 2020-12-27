@@ -1,0 +1,15 @@
+contentColumnType: 'decimal(12,2)'
+fieldGroup: 055210b5-2633-48be-a17b-a81ecbb643c3
+handle: weight
+instructions: ''
+name: Weight
+searchable: false
+settings:
+  decimals: '2'
+  defaultValue: null
+  max: null
+  min: '0'
+  size: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

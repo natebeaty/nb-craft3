@@ -1,0 +1,45 @@
+fieldLayouts:
+  656f1180-53a7-4e50-a0fa-23c11c0470cd:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: fa9fc1f2-faef-4192-a91e-fdef1db4d7a7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 99b9f574-b1e5-47f4-8d48-18e64748faef
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 5ba3c7cc-05d2-4269-bcca-40322154aee9
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 923dfd91-51c2-4bd8-b91d-88746e94fcad
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Tab 1'
+        sortOrder: '1'
+      -
+        elements:
+          -
+            fieldUid: 4b7aee9a-860d-4d7d-8e51-088345eb928f
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: dd8198bd-9339-4152-911a-2c279336bdd8
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: '2'
+handle: featured
+hasTitleField: '1'
+name: Featured
+section: 7577dd2d-1bd5-42b9-8614-5cd507e4596b
+sortOrder: '1'
+titleFormat: null

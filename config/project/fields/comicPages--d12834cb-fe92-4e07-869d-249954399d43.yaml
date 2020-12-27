@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 055210b5-2633-48be-a17b-a81ecbb643c3
+handle: comicPages
+instructions: ''
+name: 'Comic Pages'
+searchable: '1'
+settings:
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:c29d2f2b-8d65-473a-99e8-9577265744a2'
+  defaultUploadLocationSubpath: '{slug}'
+  limit: ''
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Choose comic pages'
+  singleUploadLocationSource: 'volume:c29d2f2b-8d65-473a-99e8-9577265744a2'
+  singleUploadLocationSubpath: '{slug}'
+  sources: '*'
+  useSingleFolder: '1'
+  viewMode: large
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets

@@ -1,0 +1,37 @@
+fieldLayouts:
+  8a93ca76-3346-4f13-a4fa-3a21e6ec32e7:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: null
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: fa9fc1f2-faef-4192-a91e-fdef1db4d7a7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: c87b3338-59ec-47e0-b599-8e06a34e3098
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Tab 1'
+        sortOrder: '1'
+      -
+        elements:
+          -
+            fieldUid: 4b7aee9a-860d-4d7d-8e51-088345eb928f
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: dd8198bd-9339-4152-911a-2c279336bdd8
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: '2'
+handle: about
+hasTitleField: '0'
+name: About
+section: f1fda3e3-ba67-4ab1-8c7c-3ff3dba59a71
+sortOrder: '1'
+titleFormat: '{section.name|raw}'

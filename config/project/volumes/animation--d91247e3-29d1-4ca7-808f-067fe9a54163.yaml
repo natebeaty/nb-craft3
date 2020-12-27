@@ -1,0 +1,38 @@
+fieldLayouts:
+  a7f819f0-5b56-4d20-aeb0-b28c6b237517:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: animation
+hasUrls: true
+name: Animation
+settings:
+  path: '@assetsBasePath/animation'
+sortOrder: 5
+type: craft\volumes\Local
+url: '@assetsBaseUrl/animation'

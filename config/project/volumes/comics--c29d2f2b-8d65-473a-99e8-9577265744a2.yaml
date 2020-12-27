@@ -1,0 +1,38 @@
+fieldLayouts:
+  29eb3480-bf7e-43b4-bbd0-f8809228338e:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: comics
+hasUrls: true
+name: Comics
+settings:
+  path: '@assetsBasePath/comics'
+sortOrder: 2
+type: craft\volumes\Local
+url: '@assetsBaseUrl/comics'

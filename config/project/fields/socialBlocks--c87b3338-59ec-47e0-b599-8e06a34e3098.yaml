@@ -1,0 +1,13 @@
+contentColumnType: string
+fieldGroup: 7ccd7585-e576-4a7c-81bd-999c168264e2
+handle: socialBlocks
+instructions: ''
+name: 'Social Blocks'
+searchable: '1'
+settings:
+  contentTable: '{{%matrixcontent_socialblocks}}'
+  localizeBlocks: false
+  maxBlocks: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Matrix

@@ -1,0 +1,19 @@
+contentColumnType: text
+fieldGroup: 7ccd7585-e576-4a7c-81bd-999c168264e2
+handle: body
+instructions: ''
+name: Body
+searchable: '1'
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: ''
+  redactorConfig: Standard.json
+  removeEmptyTags: ''
+  removeInlineStyles: ''
+  removeNbsp: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

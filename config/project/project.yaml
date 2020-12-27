@@ -1,0 +1,75 @@
+dateModified: 1609091474
+email:
+  fromEmail: nate@clixel.com
+  fromName: 'Natebeaty.com (Craft)'
+  template: null
+  transportType: craft\mail\transportadapters\Sendmail
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+plugins:
+  asset-rev:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  assetrev:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  cp-field-inspect:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  expanded-singles:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings:
+      expandSingles: '1'
+      redirectToEntry: '1'
+  redactor:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.3.0
+    settings: null
+  redactor-tweaks:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  retcon:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  retcon-html:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: '1.0'
+    settings: null
+  video-embed-utility:
+    enabled: '0'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  wordsmith:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 0.0.0.0
+    settings: null
+system:
+  edition: solo
+  live: true
+  name: 'Nate Beaty'
+  schemaVersion: 3.5.13
+  timeZone: UTC
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

@@ -1,0 +1,15 @@
+contentColumnType: text
+fieldGroup: 7ccd7585-e576-4a7c-81bd-999c168264e2
+handle: animationEmbed
+instructions: ''
+name: 'Animation Embed'
+searchable: '1'
+settings:
+  charLimit: ''
+  columnType: text
+  initialRows: '4'
+  multiline: '1'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

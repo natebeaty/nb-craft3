@@ -1,0 +1,60 @@
+field: 923dfd91-51c2-4bd8-b91d-88746e94fcad
+fieldLayouts:
+  4fdcba29-c964-4e70-950c-b0ed71e10f9b:
+    tabs:
+      -
+        fields:
+          46044220-4c91-43c8-a145-52ddd272d71e:
+            required: '0'
+            sortOrder: '2'
+          fd62e3fe-23c7-4e02-b892-132c1d4da8e7:
+            required: '0'
+            sortOrder: '1'
+        name: Content
+        sortOrder: '1'
+fields:
+  46044220-4c91-43c8-a145-52ddd272d71e:
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: ''
+    name: Description
+    searchable: '1'
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  fd62e3fe-23c7-4e02-b892-132c1d4da8e7:
+    contentColumnType: string
+    fieldGroup: null
+    handle: images
+    instructions: ''
+    name: Images
+    searchable: '1'
+    settings:
+      defaultUploadLocationSource: 'volume:3ab74c73-4099-4444-85ac-8ee3abd91f6f'
+      defaultUploadLocationSubpath: '{owner.slug}'
+      limit: ''
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: ''
+      singleUploadLocationSource: 'volume:3ab74c73-4099-4444-85ac-8ee3abd91f6f'
+      singleUploadLocationSubpath: ''
+      sources:
+        - 'volume:65e4b53d-2f6c-4765-a073-49728d4efe85'
+      useSingleFolder: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Assets
+handle: featureBlock
+name: 'Feature Block'
+sortOrder: '1'

@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 7ccd7585-e576-4a7c-81bd-999c168264e2
+handle: shortDescription
+instructions: ''
+name: 'Short Description'
+searchable: '1'
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  columnType: text
+  purifyHtml: '1'
+  redactorConfig: Simple.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

@@ -1,0 +1,33 @@
+fieldLayouts:
+  ba809636-944c-4654-b34c-17405491ff61:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: ''
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: fa9fc1f2-faef-4192-a91e-fdef1db4d7a7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Tab 1'
+        sortOrder: '1'
+      -
+        elements:
+          -
+            fieldUid: 4b7aee9a-860d-4d7d-8e51-088345eb928f
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: dd8198bd-9339-4152-911a-2c279336bdd8
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: '2'
+handle: journalArchives
+hasTitleField: '1'
+name: 'Journal Archives'
+section: 00443305-72ee-4efd-abc5-48edf0835af2
+sortOrder: '1'
+titleFormat: null

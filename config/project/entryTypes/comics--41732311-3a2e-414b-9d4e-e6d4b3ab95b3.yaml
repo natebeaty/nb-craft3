@@ -1,0 +1,69 @@
+fieldLayouts:
+  fffc2cca-553b-4268-8b9e-69611f27f2cc:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: fa9fc1f2-faef-4192-a91e-fdef1db4d7a7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 1e7deaa3-1a8a-4852-a4b6-f03d86f99e39
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 88707667-7b74-4f33-9f86-f861978a6314
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 20b9f754-6beb-4ada-8c25-50c1453536c0
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: e44e0ee6-c8d3-4a83-a785-5466e3c37fd4
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: e6890102-93bc-4cc6-9f10-a9994de342d4
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 4e6ac371-6e56-4254-8b04-d4f0aced41bc
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 99b9f574-b1e5-47f4-8d48-18e64748faef
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: d12834cb-fe92-4e07-869d-249954399d43
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: f82f47b3-4f29-4cab-92aa-2d9df27fdfbf
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Main
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 4b7aee9a-860d-4d7d-8e51-088345eb928f
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: dd8198bd-9339-4152-911a-2c279336bdd8
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 2
+handle: comics
+hasTitleField: true
+name: Comics
+section: aeff8d10-5b48-4789-90e3-bbeb5f73ac9c
+sortOrder: 1
+titleFormat: ''
