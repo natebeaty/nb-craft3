@@ -3,22 +3,29 @@ fieldGroup: 7ccd7585-e576-4a7c-81bd-999c168264e2
 handle: featuredImage
 instructions: 'Used for listing pages'
 name: 'Featured Image'
-searchable: '1'
+searchable: true
 settings:
+  allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:3ab74c73-4099-4444-85ac-8ee3abd91f6f'
   defaultUploadLocationSubpath: '{slug}'
   limit: '1'
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
   selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:3ab74c73-4099-4444-85ac-8ee3abd91f6f'
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'
   targetSiteId: null
-  useSingleFolder: ''
+  useSingleFolder: false
+  validateRelatedElements: false
   viewMode: large
 translationKeyFormat: null
 translationMethod: site

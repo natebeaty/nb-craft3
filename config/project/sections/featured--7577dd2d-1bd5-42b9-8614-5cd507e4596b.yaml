@@ -1,15 +1,20 @@
-enableVersioning: '1'
+enableVersioning: true
 handle: featured
 name: Featured
 previewTargets:
   -
-    label: 'Primary entry page'
-    urlFormat: '{url}'
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
 propagationMethod: all
 siteSettings:
   0b61de0c-3eaf-46f8-a16d-d22ea8a17a00:
-    enabledByDefault: '1'
-    hasUrls: '1'
+    enabledByDefault: true
+    hasUrls: true
     template: featured/_entry
     uriFormat: 'featured/{slug}'
 type: channel

@@ -2,14 +2,26 @@ fieldLayouts:
   ef905e82-fc27-4731-9eed-448e2fb5d348:
     tabs:
       -
-        fields:
-          4b7aee9a-860d-4d7d-8e51-088345eb928f:
+        elements:
+          -
+            fieldUid: dd8198bd-9339-4152-911a-2c279336bdd8
+            instructions: null
+            label: null
             required: '0'
-            sortOrder: '2'
-          dd8198bd-9339-4152-911a-2c279336bdd8:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4b7aee9a-860d-4d7d-8e51-088345eb928f
+            instructions: null
+            label: null
             required: '0'
-            sortOrder: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
-        sortOrder: '1'
+        sortOrder: 1
 handle: globalSeo
 name: 'Global SEO'

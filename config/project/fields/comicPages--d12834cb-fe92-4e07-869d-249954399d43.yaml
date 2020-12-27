@@ -3,21 +3,30 @@ fieldGroup: 055210b5-2633-48be-a17b-a81ecbb643c3
 handle: comicPages
 instructions: ''
 name: 'Comic Pages'
-searchable: '1'
+searchable: true
 settings:
+  allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:c29d2f2b-8d65-473a-99e8-9577265744a2'
   defaultUploadLocationSubpath: '{slug}'
   limit: ''
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
   selectionLabel: 'Choose comic pages'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:c29d2f2b-8d65-473a-99e8-9577265744a2'
   singleUploadLocationSubpath: '{slug}'
+  source: null
   sources: '*'
-  useSingleFolder: '1'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
   viewMode: large
 translationKeyFormat: null
-translationMethod: none
+translationMethod: site
 type: craft\fields\Assets

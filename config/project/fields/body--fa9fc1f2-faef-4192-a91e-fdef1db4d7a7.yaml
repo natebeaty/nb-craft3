@@ -3,17 +3,25 @@ fieldGroup: 7ccd7585-e576-4a7c-81bd-999c168264e2
 handle: body
 instructions: ''
 name: Body
-searchable: '1'
+searchable: true
 settings:
   availableTransforms: '*'
   availableVolumes: '*'
+  cleanupHtml: true
   columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
   purifierConfig: ''
   purifyHtml: ''
   redactorConfig: Standard.json
   removeEmptyTags: ''
   removeInlineStyles: ''
   removeNbsp: ''
+  showHtmlButtonForNonAdmins: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
+  uiMode: enlarged
 translationKeyFormat: null
 translationMethod: none
 type: craft\redactor\Field

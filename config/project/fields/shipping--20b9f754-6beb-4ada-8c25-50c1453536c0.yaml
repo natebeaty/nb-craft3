@@ -3,11 +3,17 @@ fieldGroup: 7ccd7585-e576-4a7c-81bd-999c168264e2
 handle: shipping
 instructions: 'Use this to override PayPal shipping rates'
 name: Shipping
-searchable: '1'
+searchable: true
 settings:
   decimals: '2'
-  max: ''
+  defaultValue: null
+  max: null
   min: '0'
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Number

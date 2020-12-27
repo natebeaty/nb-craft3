@@ -3,21 +3,30 @@ fieldGroup: 7ccd7585-e576-4a7c-81bd-999c168264e2
 handle: featureImages
 instructions: ''
 name: 'Feature Images'
-searchable: '1'
+searchable: true
 settings:
+  allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:3ab74c73-4099-4444-85ac-8ee3abd91f6f'
   defaultUploadLocationSubpath: ''
   limit: ''
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
   selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:65e4b53d-2f6c-4765-a073-49728d4efe85'
   singleUploadLocationSubpath: '{slug}'
+  source: null
   sources: '*'
-  useSingleFolder: '1'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
   viewMode: large
 translationKeyFormat: null
-translationMethod: none
+translationMethod: site
 type: craft\fields\Assets

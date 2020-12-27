@@ -1,9 +1,39 @@
+fieldLayouts:
+  0bc099b1-b96e-4c55-8c7e-b880b896f8f4:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: 'Tab 1'
+        sortOrder: 1
 handle: comics
 name: Comics
 siteSettings:
   0b61de0c-3eaf-46f8-a16d-d22ea8a17a00:
-    hasUrls: '1'
-    template: ''
+    hasUrls: true
+    template: null
     uriFormat: '{% if object.level == 1 %}comics/{slug}{% else %}{parent.uri}/{slug}{% endif %}'
 structure:
   maxLevels: null

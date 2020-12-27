@@ -1,8 +1,9 @@
 baseUrl: 'http://craft.dev/'
+enabled: true
 handle: en_us
-hasUrls: '1'
+hasUrls: true
 language: en-US
 name: 'Nate Beaty'
-primary: '1'
+primary: true
 siteGroup: 7d9814cd-e9f7-4059-82d9-49120c1e1bbc
-sortOrder: '1'
+sortOrder: 1

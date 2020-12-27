@@ -3,12 +3,21 @@ fieldGroup: 055210b5-2633-48be-a17b-a81ecbb643c3
 handle: category
 instructions: ''
 name: Category
-searchable: '1'
+searchable: true
 settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
   branchLimit: '1'
+  limit: null
   localizeRelations: false
   selectionLabel: ''
+  showSiteMenu: true
   source: 'group:ddf04915-fb55-44c7-b529-22ef19d29e09'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
 translationKeyFormat: null
-translationMethod: none
+translationMethod: site
 type: craft\fields\Categories

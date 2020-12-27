@@ -1,13 +1,9 @@
-dateModified: 1609091474
+dateModified: 1609093277
 email:
   fromEmail: nate@clixel.com
   fromName: 'Natebeaty.com (Craft)'
   template: null
   transportType: craft\mail\transportadapters\Sendmail
-graphql:
-  publicToken:
-    enabled: false
-    expiryDate: null
 plugins:
   asset-rev:
     enabled: '1'

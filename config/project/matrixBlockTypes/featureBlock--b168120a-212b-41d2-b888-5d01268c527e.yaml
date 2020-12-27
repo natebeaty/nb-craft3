@@ -3,15 +3,27 @@ fieldLayouts:
   4fdcba29-c964-4e70-950c-b0ed71e10f9b:
     tabs:
       -
-        fields:
-          46044220-4c91-43c8-a145-52ddd272d71e:
+        elements:
+          -
+            fieldUid: fd62e3fe-23c7-4e02-b892-132c1d4da8e7
+            instructions: null
+            label: null
             required: '0'
-            sortOrder: '2'
-          fd62e3fe-23c7-4e02-b892-132c1d4da8e7:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 46044220-4c91-43c8-a145-52ddd272d71e
+            instructions: null
+            label: null
             required: '0'
-            sortOrder: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
-        sortOrder: '1'
+        sortOrder: 1
 fields:
   46044220-4c91-43c8-a145-52ddd272d71e:
     contentColumnType: text
@@ -19,16 +31,25 @@ fields:
     handle: description
     instructions: ''
     name: Description
-    searchable: '1'
+    searchable: true
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
+      cleanupHtml: true
       columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: null
       purifyHtml: '1'
       redactorConfig: ''
       removeEmptyTags: '1'
       removeInlineStyles: '1'
       removeNbsp: '1'
+      showHtmlButtonForNonAdmins: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -38,23 +59,33 @@ fields:
     handle: images
     instructions: ''
     name: Images
-    searchable: '1'
+    searchable: true
     settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
       defaultUploadLocationSource: 'volume:3ab74c73-4099-4444-85ac-8ee3abd91f6f'
       defaultUploadLocationSubpath: '{owner.slug}'
       limit: ''
       localizeRelations: false
+      previewMode: full
       restrictFiles: ''
       selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
       singleUploadLocationSource: 'volume:3ab74c73-4099-4444-85ac-8ee3abd91f6f'
       singleUploadLocationSubpath: ''
+      source: null
       sources:
         - 'volume:65e4b53d-2f6c-4765-a073-49728d4efe85'
-      useSingleFolder: ''
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: craft\fields\Assets
 handle: featureBlock
 name: 'Feature Block'
-sortOrder: '1'
+sortOrder: 1
