@@ -1,7 +1,7 @@
 from fabric.api import *
 import os
 
-env.hosts = ['natebeaty.opalstack.com']
+env.hosts = ['natebeaty.opalstacked.com']
 env.user = 'natebeaty'
 env.path = '~/Sites/nb-craft3'
 env.remotepath = '/home/natebeaty/apps/nb_craft3'
