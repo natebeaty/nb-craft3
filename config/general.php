@@ -25,8 +25,6 @@ return [
 
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
-
-        'cdnUrl' => '',
     ],
 
     // Dev environment settings
@@ -48,6 +46,5 @@ return [
     'production' => [
         // Base site URL
         'siteUrl' => 'https://natebeaty.com',
-        'cdnUrl' => 'https://static.natebeaty.com',
     ],
 ];

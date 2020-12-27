@@ -18,8 +18,8 @@
     </div>
     {% for image in entry.featureImages.all() %}
       <img width="{{ image.width }}" height="{{ image.height }}"
-        src="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }}"
-        srcset="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }} 750w, {{ craft.app.config.general.cdnUrl }}{{ image.getUrl() }} {{ image.width }}w,"
+        src="{{ image.getUrl('listing') }}"
+        srcset="{{ image.getUrl('listing') }} 750w, {{ image.getUrl() }} {{ image.width }}w,"
         sizes="(max-width: 768px) 100vw, (max-width: 1500px) 750px, 960px"
         alt="{{ image.title ? image.title : entry.title }}"
         loading="lazy"
@@ -30,8 +30,8 @@
       {% if block.type == "featureBlock" %}
         {% for image in block.images.all() %}
           <img width="{{ image.width }}" height="{{ image.height }}"
-            src="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }}"
-            srcset="{{ craft.app.config.general.cdnUrl }}{{ image.getUrl('listing') }} 750w, {{ craft.app.config.general.cdnUrl }}{{ image.getUrl() }} {{ image.width }}w,"
+            src="{{ image.getUrl('listing') }}"
+            srcset="{{ image.getUrl('listing') }} 750w, {{ image.getUrl() }} {{ image.width }}w,"
             sizes="(max-width: 768px) 100vw, (max-width: 1500px) 750px, 960px"
             alt="{{ image.title ? image.title : entry.title }}"
             loading="lazy"
