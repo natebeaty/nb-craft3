@@ -1,19 +1,14 @@
 from fabric.api import *
 import os
 
-env.hosts = ['natebeaty.webfactional.com']
+env.hosts = ['natebeaty.opalstack.com']
 env.user = 'natebeaty'
-env.path = '~/Sites/clx'
-env.remotepath = '/home/natebeaty/webapps/nb_craft3'
+env.path = '~/Sites/nb-craft3'
+env.remotepath = '/home/natebeaty/apps/nb_craft3'
 env.git_branch = 'master'
 env.warn_only = True
-env.remote_protocol = 'http'
-
-def production():
-  env.hosts = ['natebeaty.com']
-  env.remotepath = '/home/natebeaty/webapps/nb_craft3'
-  env.git_branch = 'master'
-  env.remote_protocol = 'https'
+env.forward_agent = True
+env.php_binary = 'php74'
 
 def assets():
   local('npx gulp --production')
@@ -31,7 +26,7 @@ def deploy(composer='y'):
   update()
   if composer == 'y':
     composer_install()
-  # clear_cache()
+  clear_cache()
 
 def update():
   with cd(env.remotepath):
@@ -39,11 +34,9 @@ def update():
 
 def composer_install():
   with cd(env.remotepath):
-    run('php72 ~/bin/composer.phar install')
+    run('%s ~/bin/composer.phar install' % env.php_binary)
 
-def composer_update():
+def clear_cache():
   with cd(env.remotepath):
-    run('php72 ~/bin/composer.phar update')
-
-# def clear_cache():
-#   run ('curl -vs -o /dev/null {0}://{1}/actions/cacheClear/clear?key=fbclear > /dev/null 2>&1'.format(env.remote_protocol, env.hosts[0]))
+    run('./craft clear-caches/compiled-templates')
+    run('./craft clear-caches/data')
