@@ -21,7 +21,7 @@
         <div class="pad">
           <img src="{{ featuredImage.getUrl('thumb1x') }}"
             srcset="{{ featuredImage.getUrl('thumb1x') }} 250w, {{ featuredImage.getUrl('thumb') }} 500w"
-            sizes="(max-width: 768px) 100vw, calc((100vw - 90px) / 4)"
+            sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 768px) 50vw, 25vw"
             alt="{{ featuredImage.title }}"
             loading="lazy"
           />

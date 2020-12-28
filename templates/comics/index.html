@@ -29,7 +29,7 @@
               <img
                 src="{{ featuredImage.getUrl('thumb1x') }}"
                 srcset="{{ featuredImage.getUrl('thumb1x') }} 250w, {{ featuredImage.getUrl('thumb') }} 500w, {{ featuredImage.getUrl('thumbLarge') }} 1000w"
-                sizes="(max-width: 768px) 100vw, {{ (entry.size=='large') ? "calc((100vw - 90px) / 2)" : "calc((100vw - 90px) / 4)" }}"
+                sizes="(max-width: 480px) 100vw, (min-width: 481px) and (max-width: 768px) 50vw, {{ (entry.size=='large') ? "50vw" : "25vw" }}"
                 alt="{{ featuredImage.title ? featuredImage.title : entry.title }}"
                 loading="lazy"
               />
