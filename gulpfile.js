@@ -102,6 +102,8 @@ gulp.task('rev', function() {
 gulp.task('copy', function() {
   gulp.src(['assets/js/modernizr.custom.js'])
     .pipe(gulp.dest('web/assets/dist/js/'));
+  gulp.src(['assets/svg/*'])
+    .pipe(gulp.dest('web/assets/dist/svg/'));
   return gulp.src(['assets/img/*'])
     .pipe(gulp.dest('web/assets/dist/img/'));
 });

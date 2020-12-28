@@ -12,11 +12,14 @@
   <title>{% if title is defined %}{{ title }} – {{ siteName }}{% else %}{{ seoTitle }}{% endif %}</title>
   <meta name="description" content="{% if description is defined %}{{ description }}{% else %}{{ seoDescription }}{% endif %}"/>
   <link rel="home" href="{{ siteUrl }}" />
-  <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="alternate" type="application/rss+xml" title="Nate Beaty Journal" href="http://feeds.feedburner.com/natebeaty/journal" />
+  <link rel="alternate" type="application/rss+xml" title="Nate Beaty Journal" href="https://feeds.feedburner.com/natebeaty/journal" />
   <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
-  <link rel="shortcut icon" href="{{ rev('img/favicon.png') }}">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="{{ rev('svg/natehead.svg') }}" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="{{ rev('img/apple.png') }}">
+  <link rel="manifest" href="/manifest.webmanifest">
+
   <script type="text/javascript" src="{{ rev('js/modernizr.custom.js') }}"></script>
 </head>
 
