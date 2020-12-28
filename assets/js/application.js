@@ -5,7 +5,6 @@
 //=include "../bower_components/jquery/dist/jquery.js"
 //=include "../bower_components/jquery.fitvids/jquery.fitvids.js"
 //=include "../bower_components/imagesloaded/imagesloaded.pkgd.min.js"
-//=include "../bower_components/masonry/dist/masonry.pkgd.js"
 //=include "../bower_components/jquery.easing/js/jquery.easing.min.js"
 //=include "../bower_components/jquery-touchswipe/jquery.touchSwipe.js"
 //=include "../bower_components/history.js/scripts/bundled/html5/jquery.history.js"
@@ -441,12 +440,11 @@ var Nb = (function($) {
     });
   }
 
-  // Update page with cached content for current URL, track it, show it
+  // Update page with cached content for current URL, show it
   function _updatePage() {
     $('main').removeClass('loaded');
     $('main').html(page_cache[encodeURIComponent(State.url)]);
 
-    _trackPage();
     _showPage();
     _updateTitle();
   }
@@ -469,22 +467,6 @@ var Nb = (function($) {
     // Refit them vids!
     $('main').fitVids();
 
-    // Init masonry
-    $('.masonryme:not(.inited)').each(function() {
-      var $this = $(this);
-      $this.imagesLoaded()
-        .done(function() {
-          $this.find('.ratiowrap').addClass('loaded');
-          $this.masonry({
-            itemSelector: 'article',
-            percentPosition: true,
-            gutter: 10
-          }).on('layoutComplete', function(){
-            $(this).addClass('inited');
-          });
-        });
-    });
-
     // Loading new page, scroll body to top
     if (scroll_to_top) {
       _scrollBody('#top', 250);
@@ -492,11 +474,7 @@ var Nb = (function($) {
     }
 
     // Add loaded class to init page transition animations
-    setTimeout(function() {
-      $('main').addClass('loaded').imagesLoaded().done(function() {
-        $('.masonryme').masonry();
-      });
-    }, 150);
+    $('main').addClass('loaded');
 
     // Lightbox
     if ($('a.blowup').length) {
@@ -640,19 +618,6 @@ var Nb = (function($) {
     return '#' + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
   }
 
-  // Track AJAX pages in Analytics
-  function _trackPage() {
-    if (typeof ga !== 'undefined') {
-      ga('send', 'pageview', location.pathname);
-    }
-  }
-
-  // Track events in Analytics
-  function _trackEvent(category, action) {
-    if (typeof ga !== 'undefined') {
-      ga('send', 'event', category, action);
-    }
-  }
 
   // External URL?
   function _isExternal(url) {

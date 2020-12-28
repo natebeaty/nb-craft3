@@ -18,7 +18,7 @@
 
     <div class="comic-group category-{{ category.slug }}">
       <h2>{{ category.title }}</h2>
-      <div class="masonryme">
+      <div class="thumb-wrap">
       {% set relatedEntries = craft.entries.relatedTo(category) %}
       {% for entry in relatedEntries.all() %}
 
@@ -26,16 +26,14 @@
         {% if featuredImage %}
           <article class="bigclicky {{ (entry.size=='large') ? "wide" : "" }}">
             <div class="pad">
-              <div class="ratiowrap" style="padding-bottom: {{ featuredImage.height / featuredImage.width * 100 }}%">
-                <img class="wrapped"
-                  src="{{ featuredImage.getUrl('thumb1x') }}"
-                  srcset="{{ featuredImage.getUrl('thumb1x') }} 250w, {{ featuredImage.getUrl('thumb') }} 500w, {{ featuredImage.getUrl('thumbLarge') }} 1000w"
-                  sizes="(max-width: 768px) 100vw, {{ (entry.size=='large') ? "calc((100vw - 90px) / 2)" : "calc((100vw - 90px) / 4)" }}"
-                  alt="{{ featuredImage.title ? featuredImage.title : entry.title }}"
-                  loading="lazy"
-                />
-              </div>
-              <h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
+              <img
+                src="{{ featuredImage.getUrl('thumb1x') }}"
+                srcset="{{ featuredImage.getUrl('thumb1x') }} 250w, {{ featuredImage.getUrl('thumb') }} 500w, {{ featuredImage.getUrl('thumbLarge') }} 1000w"
+                sizes="(max-width: 768px) 100vw, {{ (entry.size=='large') ? "calc((100vw - 90px) / 2)" : "calc((100vw - 90px) / 4)" }}"
+                alt="{{ featuredImage.title ? featuredImage.title : entry.title }}"
+                loading="lazy"
+              />
+              <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
             </div>
           </article>
         {% endif %}

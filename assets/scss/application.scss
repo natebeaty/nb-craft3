@@ -461,20 +461,30 @@ body.in-section {
   .category-shorts article,
   .category-oldies article,
   .category-kids article {
-    width: calc( (100% - 10px) / 2 );
+    flex: 0 1 50%;
     @include min-screen($breakpoint-medium) {
-      width: calc( (100% - 50px) / 5 );
+      flex: 0 1 20%;
     }
   }
   .images-loaded article img {
     min-height: 0;
   }
 
+  .thumb-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -5px;
+    position: relative;
+  }
+
   article {
-    width: 100%;
-    float: left;
+    flex: 0 1 100%;
     margin: 0 0 10px;
     position: relative;
+    .pad {
+      padding: 0 5px;
+      position: relative;
+    }
 
     a {
       display: block;
@@ -482,7 +492,7 @@ body.in-section {
     img {
       display: block;
     }
-    h1 {
+    h3 {
       margin: 0;
       font: normal 18px/1 "Anonymous Pro", monospace;
       color: $white;
@@ -494,18 +504,21 @@ body.in-section {
         text-decoration: none;
       }
     }
+    @include min-screen($breakpoint-small) {
+      flex: 0 1 50%;
+    }
     @include min-screen($breakpoint-medium) {
       &.wide {
-        width: calc( (100% - 10px) / 2 );
+        flex: 0 1 50%;
         img {
           width: 100%;
         }
       }
-      width: calc( (100% - 30px) / 4 );
+      flex: 0 1 25%;
       cursor: pointer;
     }
     @include min-screen($breakpoint-large) {
-      h1 {
+      h3 {
         a {
           padding: 20px;
         }
@@ -516,29 +529,20 @@ body.in-section {
 // notouch hovers
 .no-touchevents {
   .image-list {
-    // .category-shorts article,
-    // .category-oldies article,
-    // .category-kids article {
-    //   opacity: .9;
-    //   &:hover {
-    //     opacity: 1;
-    //   }
-    // }
     article {
       @include min-screen($breakpoint-medium) {
-        h1 {
+        h3 {
           visibility: hidden;
           max-height: 0;
         }
         &:hover {
-          h1 {
+          h3 {
             z-index: 3;
             overflow: hidden;
-            transition: max-height .15s steps(2), visibility 0s;
-            margin-right: 20px;
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 5px;
+            right: 5px;
             visibility: visible;
             max-height: 100px;
           }
@@ -636,7 +640,6 @@ body.active-comics {
       top: calc(100vh - 125px);
       left: 50vw;
       transform: scale(.333) translateX(-150%);
-      // transform: scale(.333) translate(-150%, calc(300vh - 400px));
     }
     main {
       padding: 80px 70px 150px 20px;
@@ -675,8 +678,6 @@ body.active-journal {
     #natehead {
       transform: scale(.333) translateX(-150%);
       top: calc(100vh - 125px);
-
-      // transform: scale(.333) translate(-150%, calc(300vh - 400px));
     }
     nav.main a.comics {
       top: 0;
@@ -771,9 +772,6 @@ body.active-journal {
     list-style: disc;
     margin: 0 0 1.5em;
   }
-  // p.answer {
-  //   color: $white;
-  // }
   code {
     background: rgba(255, 255, 255, 0.1);
     padding: 2px 4px;
@@ -918,11 +916,6 @@ img.lazy {
 
 // Easter eggs
 #natehead {
-  // &.dizzy,
-  // &.jab,
-  // &.pow {
-  //   transform-origin: center;
-  // }
   &.dizzy svg { animation: dizzy 2s forwards ease-out; }
   &.jab svg { animation: jab 2s forwards ease-in-out; }
   &.pow svg { animation: pow 2s forwards ease-in-out; }
@@ -977,32 +970,6 @@ img.lazy {
   70% { transform: translate3d(-150px, -100px, 10px) scale(5); }
 }
 
-// Wrap for images to force layout based on image ratio
-.ratiowrap {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  background: rgba(255,255,255,.05);
-  transition: background .25s;
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-  }
-  &::before {
-    @extend %loading;
-  }
-  &.loaded {
-    background: none;
-    padding-bottom: 0 !important;
-    height: auto;
-    img {
-      position: relative;
-    }
-  }
-}
 @keyframes spinner {
   100% {transform: rotate(360deg);}
 }
