@@ -1,6 +1,6 @@
 {
   "icons": [
-    { "src": "/assets/img/icon-192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "/assets/img/icon-512.png", "type": "image/png", "sizes": "512x512" }
+    { "src": "/assets/dist/img/icon-192-9d3d61abc1.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/assets/dist/img/icon-512-3ba59e5496.png", "type": "image/png", "sizes": "512x512" }
   ]
 }
