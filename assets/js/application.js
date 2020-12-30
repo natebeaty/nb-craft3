@@ -481,7 +481,9 @@ var Nb = (function($) {
     }
 
     // Add loaded class to init page transition animations
-    $('main').addClass('loaded');
+    setTimeout(function() {
+      $('main').addClass('loaded');
+    }, 100);
 
     // Lightbox
     if ($('a.blowup').length) {
