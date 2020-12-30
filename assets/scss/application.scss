@@ -583,32 +583,11 @@ body.in-section {
       right: 0;
       transform: rotate(180deg);
     }
-    span {
-      display: none;
+    svg {
+      width: 30px;
+      height: 30px;
+      stroke: #fff;
     }
-    &.previous::after,
-    &.previous::before,
-    &.next::after,
-    &.next::before {
-      position: absolute;
-      top: 7px;
-      left: 0;
-      content: '';
-      display: block;
-      width: 20px;
-      height: 2px;
-      background: $white;
-    }
-    &.previous::after,
-    &.next::after {
-      top: 20px;
-      transform: rotate(45deg);
-    }
-    &.previous::before,
-    &.next::before {
-      transform: rotate(-45deg);
-    }
-
   }
 }
 

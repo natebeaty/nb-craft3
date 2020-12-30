@@ -17,9 +17,9 @@
     {% endfor %}
 
     <div class="pagination">
-      {% if pageInfo.prevUrl %}<a rel="nofollow" class="previous" href="{{ pageInfo.prevUrl }}"><span>Previous</span></a>{% endif %}
+      {% if pageInfo.prevUrl %}<a rel="nofollow" class="previous" href="{{ pageInfo.prevUrl }}"><svg class="icon icon-arrow" aria-hidden="true"><use xlink:href="#icon-arrow"/></svg></a>{% endif %}
       <a class="archives" href="/journal/archives">Archives</a>
-      {% if pageInfo.nextUrl %}<a rel="nofollow" class="next" href="{{ pageInfo.nextUrl }}"><span>Next</span></a>{% endif %}
+      {% if pageInfo.nextUrl %}<a rel="nofollow" class="next" href="{{ pageInfo.nextUrl }}"><svg class="icon icon-arrow" aria-hidden="true"><use xlink:href="#icon-arrow"/></svg></a>{% endif %}
     </div>
   </section>
 {% endblock %}
