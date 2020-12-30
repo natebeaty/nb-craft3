@@ -159,12 +159,7 @@ var Nb = (function($) {
     $(document).on('click', '#natehead, h1.title', function(e) {
       e.preventDefault();
       if (section_in == 'home') {
-        var easter = eggs[egg_at];
-        $('#natehead').addClass(easter);
-        egg_at = (egg_at === eggs.length - 1) ? 0 : egg_at + 1;
-        setTimeout(function() {
-          $('#natehead').removeClass(easter);
-        }, 2000);
+        _easter();
       } else {
         _showNav();
       }
@@ -174,6 +169,9 @@ var Nb = (function($) {
     $('nav.main a').on('click', function(e) {
       e.preventDefault();
       _colorStache(this);
+      if (section_in == 'home') {
+        _easter();
+      }
       if (State.url == this.href) {
         // If clicking nav header when in a section, just scroll to top
         _scrollBody('#top', 250);
@@ -241,6 +239,15 @@ var Nb = (function($) {
     setTimeout(_showPage, 150);
 
   } // end init()
+
+  function _easter() {
+    var easter = eggs[egg_at];
+    $('#natehead').addClass(easter);
+    egg_at = (egg_at === eggs.length - 1) ? 0 : egg_at + 1;
+    setTimeout(function() {
+      $('#natehead').removeClass(easter);
+    }, 2000);
+  }
 
   // Open the search man!
   function _showSearch() {
