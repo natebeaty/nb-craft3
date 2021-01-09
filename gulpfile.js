@@ -73,6 +73,8 @@ function clean() {
 function copy() {
   gulp.src(['assets/js/modernizr.custom.js'])
     .pipe(gulp.dest('web/assets/dist/js/'));
+  gulp.src(['assets/js/lazysizes.min.js'])
+    .pipe(gulp.dest('web/assets/dist/js/'));
   gulp.src(['assets/svg/*'])
     .pipe(gulp.dest('web/assets/dist/svg/'));
   return gulp.src(['assets/img/*'])

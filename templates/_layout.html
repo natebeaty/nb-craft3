@@ -22,6 +22,7 @@
   <link rel="manifest" href="/manifest.webmanifest">
 
   <script type="text/javascript" src="{{ rev('js/modernizr.custom.js') }}"></script>
+  <script type="text/javascript" src="{{ rev('js/lazysizes.min.js') }}"></script>
 </head>
 
 <body class="{% if currentUser %}logged-in {% endif %}{% if bodyClass is defined %}{{ bodyClass }} {% endif %}{{ craft.app.request.getSegment(1) ? 'in-section active-'~craft.app.request.getSegment(1) : 'home' }}"{% if bodyId is defined %} id="{{ bodyId }}"{% endif %}>
