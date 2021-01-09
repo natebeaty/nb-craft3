@@ -1,0 +1,41 @@
+// featured
+body.active-featured {
+  background: $featured;
+  .description {
+    margin: 20px 0;
+  }
+  .actions {
+    margin: -10px 0 20px;
+    @include clearfix;
+  }
+  .user-content a {
+    color: $link_dark;
+    @include inline-link($link_dark, $featured);
+  }
+  @include min-screen($breakpoint-medium) {
+    main {
+      padding: 150px 20px 50px 70px;
+    }
+    &.active-single main {
+      padding: 120px 20px 150px 70px;
+    }
+    .s,
+    .cart,
+    .x {
+      right: auto;
+      top: 68px;
+      left: 68px;
+    }
+    .s {
+      left: 108px;
+    }
+    .cart {
+      top: 66px;
+      left: 145px;
+      .cart-wrap {
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+}

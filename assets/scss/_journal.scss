@@ -1,0 +1,83 @@
+// journal
+body.active-journal {
+  h2.date {
+    margin-top: 1.5em;
+  }
+  p.date {
+    opacity: 0.65;
+    margin-bottom: 1em;
+  }
+  background: $journal;
+  article.journal h1 {
+    margin-bottom: .25em;
+  }
+  h1 a,
+  .user-content a:not(.buy) {
+    @include inline-link($link, $journal);
+  }
+  h1 a:hover {
+    text-decoration: underline;
+  }
+  @include min-screen($breakpoint-medium) {
+    #natehead {
+      transform: scale(.333) translateX(-150%);
+      top: calc(100vh - 125px);
+    }
+    nav.main a.comics {
+      top: 0;
+    }
+    main {
+      padding: 80px 20px 150px 70px;
+    }
+    .s,
+    .cart,
+    .x {
+      right: auto;
+      left: 68px;
+    }
+    .s {
+      left: 108px;
+    }
+    .cart {
+      left: 145px;
+      .cart-wrap {
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+}
+// journal archives
+body.active-journal {
+  .archives {
+    >h1 {
+      margin-top: 0;
+    }
+    .archives-wrap {
+      margin: 40px 0;
+    }
+    h2.date {
+      font: 15px/1.5 "Anonymous Pro", monospace;
+    }
+    li {
+      position: relative;
+      margin-bottom: 10px;
+      .len {
+        width: 100px;
+        height: 2px;
+        background: rgba(0,0,0,.25);
+        @include min-screen($breakpoint-medium) {
+          display: block;
+          position: absolute;
+          right: 101%;
+          top: 8px;
+        }
+      }
+      a {
+        @extend .h2;
+        color: $link;
+        @include inline-link($link, $journal);
+      }
+    }
+  }
+}

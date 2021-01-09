@@ -8,7 +8,7 @@
 //=include "../bower_components/jquery.easing/js/jquery.easing.min.js"
 //=include "../bower_components/jquery-touchswipe/jquery.touchSwipe.js"
 //=include "../bower_components/history.js/scripts/bundled/html5/jquery.history.js"
-//=include "../bower_components/simplelightbox/dist/simple-lightbox.js"
+//=include "../bower_components/glightbox/dist/js/glightbox.min.js"
 
 var Nb = (function($) {
 
@@ -485,12 +485,19 @@ var Nb = (function($) {
       $('main').addClass('loaded');
     }, 100);
 
-    // Lightbox
+    // Lightboxes
     if ($('a.blowup').length) {
-      lightbox = $('a.blowup').simpleLightbox();
-      $('a.blowup').on('shown.simplelightbox', function() {
+      lightbox = GLightbox({
+        selector: '.blowup',
+      });
+      $('.lightbox-group').on('click', function(e) {
+        e.preventDefault();
+        lightbox.open().goToSlide(1);
+      });
+      lightbox.on('open', function(){
         lightbox_open = true;
-      }).on('closed.simplelightbox', function() {
+      });
+      lightbox.on('close', function(){
         lightbox_open = false;
       });
     }

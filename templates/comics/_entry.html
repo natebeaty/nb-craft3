@@ -16,19 +16,26 @@
     <div class="meta user-content">
       <div class="body">{{ entry.body }}</div>
       <div class="info">{{ entry.shortDescription }}</div>
-      {% if entry.price > 0 %}
-        <button class="buy" data-price="{{ entry.price }}" data-title="{{ entry.title|escape }}" data-id="{{ entry.id }}">Buy — ${{ entry.price + 0 }}</button>
-      {% endif %}
+      <div class="actions">
+        {% if entry.price > 0 %}
+          <button class="buy" data-price="{{ entry.price }}" data-title="{{ entry.title|escape }}" data-id="{{ entry.id }}">Buy — ${{ entry.price + 0 }}</button>
+        {% endif %}
+        <button class="lightbox-group">
+          <span>SLIDESHOW</span>
+          <svg class="icon" role="img"><use xlink:href="#icon-lightbox"></use></svg>
+        </button>
+      </div>
     </div>
     <div class="comic-pages">
     {% for image in entry.comicPages.all() %}
-      <img width="{{ image.width }}" height="{{ image.height }}"
-        src="{{ image.getUrl('listing') }}"
-        srcset="{{ image.getUrl('listing') }} 750w, {{ image.getUrl() }} {{ image.width }}w,"
-        sizes="(max-width: 768px) 100vw, (max-width: 1500px) 750px, 960px"
-        alt="{{ image.title ? image.title : entry.title }}"
-        loading="lazy"
-      />
+      <a class="blowup" href="{{ image.getUrl() }}">
+        <img width="{{ image.width }}" height="{{ image.height }}"
+          src="{{ image.getUrl('listing') }}"
+          srcset="{{ image.getUrl('listing') }} 750w, {{ image.getUrl() }} {{ image.width }}w,"
+          sizes="(max-width: 768px) 100vw, (max-width: 1500px) 750px, 960px"
+          alt="{{ image.title ? image.title : entry.title }}"
+          loading="lazy">
+      </a>
     {% endfor %}
     {% include "partials/_edit" with {'entry': entry} %}
     </div>

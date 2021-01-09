@@ -1,5 +1,32 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 
 {% block content %}
-{{ entry.body }}
+<section data-page="{{ craft.app.request.absoluteUrl|replace((siteUrl), '/') }}" data-page-title="{{ entry.title }}">
+  {{ entry.body }}
+</section>
 {% endblock %}
+
+{#
+{% block apron %}
+  {% for block in entry.sketchbook.all() %}
+    {% if block.type == 'image' %}
+      {% set featuredImage = block.image[0] ?? null %}
+      {% if featuredImage %}
+        <figure class="sketchbook">
+          <a href="{{ block.blockUrl }}">
+            <img src="{{ featuredImage.getUrl('thumb1x') }}"
+              srcset="{{ featuredImage.getUrl('thumb1x') }} 250w, {{ featuredImage.getUrl('thumb') }} 1200w"
+              sizes="(max-width: 768px) 100vw, calc((100vw - 90px) / 2)"
+              alt="{{ featuredImage.title }}"
+              loading="lazy"
+            />
+            {% if block.caption %}
+              <figcaption>{{ block.caption }}</a></figcaption>
+            {% endif %}
+          </a>
+        </figure>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+#}

@@ -1,0 +1,39 @@
+// comics
+body.active-comics {
+  background: $comics;
+  .comic-pages {
+    img {
+      margin-bottom: 10px;
+    }
+  }
+  .user-content a {
+    color: $link_dark;
+    @include inline-link($link_dark, $comics);
+  }
+  .meta {
+    margin-bottom: 20px;
+  }
+  .comic .ratiowrap {
+    margin-bottom: 20px;
+  }
+  .info {
+    opacity: 0.65;
+  }
+  @include min-screen($breakpoint-medium) {
+    #natehead {
+      top: calc(100vh - 125px);
+      left: 50vw;
+      transform: scale(.333) translateX(-150%);
+    }
+    main {
+      padding: 80px 70px 150px 20px;
+    }
+    nav.main a.journal {
+      top: 0;
+      span {
+        left: 0;
+        right: 20%
+      }
+    }
+  }
+}
