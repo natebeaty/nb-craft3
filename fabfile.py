@@ -1,42 +1,35 @@
-from fabric.api import *
-import os
+from fabric import task
+from invoke import run as local
 
-env.hosts = ['natebeaty.opalstacked.com']
-env.user = 'natebeaty'
-env.path = '~/Sites/nb-craft3'
-env.remotepath = '/home/natebeaty/apps/nb_craft3'
-env.git_branch = 'master'
-env.warn_only = True
-env.forward_agent = True
-env.php_binary = 'php74'
+remote_path = "/home/natebeaty/apps/nb_craft3"
+remote_hosts = ["natebeaty@natebeaty.opalstacked.com"]
+php_command = "php74"
 
-def assets():
-  local('npx gulp --production')
+# set to production
+# @task
+# def production(c):
+#     global remote_hosts, remote_path
+#     remote_hosts = ["natebeaty@natebeaty.com"]
+#     remote_path = "/home/natebeaty/apps/nb-craft3-production"
 
-def devsetup():
-  print "Installing composer, node and bower assets...\n"
-  local('composer install')
-  local('npm install')
-  local('cd assets && bower install')
-  local('npx gulp')
-  local('cp .env-example .env')
-  print "OK DONE! Hello? Are you still awake?\nEdit your .env file with local credentials\nRun `npx gulp watch` to run local gulp to compile & watch assets"
+# deploy
+@task(hosts=remote_hosts)
+def deploy(c):
+    update(c)
+    composer_update(c)
+    clear_cache(c)
 
-def deploy(composer='y'):
-  update()
-  if composer == 'y':
-    composer_install()
-  clear_cache()
+def update(c):
+    c.run("cd {} && git pull".format(remote_path))
 
-def update():
-  with cd(env.remotepath):
-    run('git pull origin {0}'.format(env.git_branch))
+def composer_update(c):
+    c.run("cd {} && {} ~/bin/composer.phar install".format(remote_path, php_command))
 
-def composer_install():
-  with cd(env.remotepath):
-    run('%s ~/bin/composer.phar install' % env.php_binary)
+def clear_cache(c):
+    c.run("cd {} && ./craft clear-caches/compiled-templates".format(remote_path))
+    c.run("cd {} && ./craft clear-caches/data".format(remote_path))
 
-def clear_cache():
-  with cd(env.remotepath):
-    run('./craft clear-caches/compiled-templates')
-    run('./craft clear-caches/data')
+# local commands
+@task
+def assets(c):
+    local("npx gulp --production")
