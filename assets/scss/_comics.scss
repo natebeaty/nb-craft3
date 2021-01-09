@@ -6,6 +6,9 @@ body.active-comics {
       margin-bottom: 10px;
     }
   }
+  .actions {
+    @include clearfix;
+  }
   .user-content a {
     color: $link_dark;
     @include inline-link($link_dark, $comics);
