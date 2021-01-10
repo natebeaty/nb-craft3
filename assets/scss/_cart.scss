@@ -45,7 +45,7 @@ a.buy {
   position: absolute;
   pointer-events: none;
   top: 40px;
-  color: black;
+  color: $white;
   perspective: 1200;
   right: -75px;
   @include min-screen($breakpoint-medium) {
@@ -86,7 +86,7 @@ a.buy {
   .cart-total {
     padding-top: 10px;
     margin-top: 10px;
-    border-top: 1px solid black;
+    border-top: 1px solid $white;
   }
 }
 .checking-out .cart-wrap,

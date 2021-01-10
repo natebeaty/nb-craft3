@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
-  <g fill="none" fill-rule="evenodd"><rect width="20" height="20" x="2.5" y="7.5"/><polyline points="3.38 4.782 25.38 4.782 25.38 26.782"/><polyline points="6.38 1.782 28.38 1.782 28.38 23.782"/>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="20" height="20" x="2.5" y="7.5" stroke="#000"/>
+    <polyline stroke="#000" points="3.38 4.782 25.38 4.782 25.38 26.782"/>
+    <polyline stroke="#000" points="6.38 1.782 28.38 1.782 28.38 23.782"/>
   </g>
 </svg>
