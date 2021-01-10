@@ -297,7 +297,8 @@ main.loaded {
 svg.icon {
   fill: none;
   stroke: $white;
-  stroke-width: 2px;
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
   width: 22px;
   height: 22px;
 }
@@ -893,14 +894,13 @@ body.active-404 {
   cursor: pointer;
   float: right;
   padding: 0;
-  margin: 5px 0 0;
+  margin: 15px 0 0;
   border: none;
   background: none;
   font: italic 18px/1 "Anonymous Pro", monospace;
   svg {
-    width: 40px;
-    height: 40px;
-    stroke-width: 1px;
+    width: 22px;
+    height: 22px;
     display: inline-block;
     vertical-align: middle;
   }
