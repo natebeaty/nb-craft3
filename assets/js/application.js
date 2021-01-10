@@ -487,18 +487,22 @@ var Nb = (function($) {
 
     // Lightboxes
     if ($('a.blowup').length) {
-      lightbox = GLightbox({
-        selector: '.blowup',
-      });
+      if (lightbox) {
+        lightbox.reload();
+      } else {
+        lightbox = GLightbox({
+          selector: '.blowup',
+        });
+        lightbox.on('open', function(){
+          lightbox_open = true;
+        });
+        lightbox.on('close', function(){
+          lightbox_open = false;
+        });
+      }
       $('.lightbox-group').on('click', function(e) {
         e.preventDefault();
         lightbox.open().goToSlide(1);
-      });
-      lightbox.on('open', function(){
-        lightbox_open = true;
-      });
-      lightbox.on('close', function(){
-        lightbox_open = false;
       });
     }
 
