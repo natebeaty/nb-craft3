@@ -913,5 +913,8 @@ body.active-404 {
   &:hover {
     background: none;
     outline: none;
+    span {
+      text-decoration: underline;
+    }
   }
 }
