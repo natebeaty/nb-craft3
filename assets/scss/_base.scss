@@ -63,9 +63,10 @@ img {
 // big ol' primary nav
 nav.main {
   height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   a {
     font: italic 24px/1 "Anonymous Pro", monospace;
-    -webkit-font-smoothing: antialiased;
     color: $white;
     text-transform: uppercase;
     letter-spacing: -1px;
@@ -79,15 +80,15 @@ nav.main {
     transition: border 0.25s steps(4), background 0.01s, font 0.01s;
     border: 0 solid rgba(0,0,0,0);
     span {
+      padding: 2px;
       display: block;
       position: absolute;
       left: 30%;
       top: 50%;
-      transform: translateZ(0); // trigger gpu
       @include max-screen($breakpoint-small) {
         top: 60%;
       }
-      transition: top .5s, left .5s, right .5s, bottom .5s;
+      // transition: top 0.35s, left 0.35s, right 0.35s, bottom 0.35s;
       transform: translateY(-50%);
     }
     @include max-screen($breakpoint-small) {
