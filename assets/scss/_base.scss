@@ -286,6 +286,9 @@ body.active-comics nav.main a.comics {
   }
 }
 
+main.loading {
+  opacity: 0.5;
+}
 main.loaded {
   .is-single,
   .page-content {

@@ -436,6 +436,7 @@ var Nb = (function($) {
 
   // Load AJAX content
   function _loadPage() {
+    $('main').addClass('loading');
     $.ajax({
       url: State.url,
       method: 'get',
@@ -449,7 +450,7 @@ var Nb = (function($) {
 
   // Update page with cached content for current URL, show it
   function _updatePage() {
-    $('main').removeClass('loaded');
+    $('main').removeClass('loaded loading');
     $('main').html(page_cache[encodeURIComponent(State.url)]);
 
     _showPage();
