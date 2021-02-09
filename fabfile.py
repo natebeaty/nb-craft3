@@ -33,3 +33,7 @@ def clear_cache(c):
 @task
 def assets(c):
     local("npx gulp --production")
+
+@task
+def dev(c):
+    local("npx gulp watch")

@@ -72,7 +72,7 @@ var Nb = (function($) {
 
           } else if (!e.metaKey && !e.shiftKey && e.keyCode >= 48 && e.keyCode <= 90) {
             // Pressing any letter starts searching ... annoying?
-            _showSearch();
+            _showSearch(e.key);
           }
         }
       }
@@ -250,9 +250,14 @@ var Nb = (function($) {
   }
 
   // Open the search man!
-  function _showSearch() {
+  function _showSearch(key) {
     searching = true;
-    $('input[name=s]')[0].focus();
+    setTimeout(function() {
+      if (typeof key !== 'undefined') {
+        $('input[name=s]').val(key);
+      }
+      $('input[name=s]')[0].focus();
+    }, 10);
     _checkSearch();
   }
 
